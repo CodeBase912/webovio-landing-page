@@ -4,7 +4,16 @@
   "description": "A landing page for a design agency",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "rimraf build",
+    "build": "rollup -c",
+    "build:watch": "rollup -c -w --environment NODE_ENV:development",
+    "build:production": "rollup -c --environment NODE_ENV:production",
+    "lint": "eslint src/**/*.js",
+    "lint:fix": "eslint src/**/*.js --fix",
+    "predev": "rimraf build",
+    "dev": "npm run build:watch",
+    "prelocal:preview": "npm run build:production",
+    "local:preview": "netlify dev"
   },
   "repository": {
     "type": "git",
