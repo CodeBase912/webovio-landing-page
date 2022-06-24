@@ -12,6 +12,7 @@
     <style>
       /* Crtitical App Shell Styles */
       :root {
+        --primary-color: #ffd723;
         --footer-bg-color: #4f553d;
         --footer-links-color: #b6c197;
       }
@@ -44,6 +45,7 @@
 
       .header__container {
         display: flex;
+        justify-content: space-between;
       }
 
       .site-branding__logo a {
@@ -55,6 +57,24 @@
         position: absolute;
         top: 0;
         left: 0;
+      }
+
+      .nav__mobile-bg {
+        position: fixed;
+        background-color: #0000005b;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0;
+        pointer-events: none;
+
+        transition: opacity 0.4s ease-in-out;
+      }
+
+      .nav__mobile-bg--open {
+        opacity: 1;
+        pointer-events: all;
       }
 
       .nav__toggle-btn {
@@ -76,7 +96,7 @@
       }
 
       .nav__hamburger-menu__btn:focus {
-        border: 2px solid #000;
+        border: 2px solid var(--primary-color);
       }
 
       .nav__hamburger-menu__bars {
@@ -143,10 +163,11 @@
       .nav__header-links--open {
         transform: translateX(-100%);
       }
+
       .nav__link {
         font-size: 24px;
         width: 100%;
-        background: red;
+        /* background: red; */
         text-align: center;
         padding: 20px 0;
       }
@@ -221,12 +242,14 @@
                 </div>
               </button>
             </div>
-            <ul id="nav-header-links" class="nav__header-links">
-              <li class="nav__link"><a href="#">About Us</a></li>
-              <li class="nav__link"><a href="#">Blog</a></li>
-              <li class="nav__link"><a href="#">Contact Us</a></li>
-              <li class="nav__link"><a href="#">Jobs</a></li>
-            </ul>
+            <div id="nav-mobile-bg" class="nav__mobile-bg">
+              <ul id="nav-header-links" class="nav__header-links">
+                <li class="nav__link"><a href="#">About Us</a></li>
+                <li class="nav__link"><a href="#">Blog</a></li>
+                <li class="nav__link"><a href="#">Contact Us</a></li>
+                <li class="nav__link"><a href="#">Jobs</a></li>
+              </ul>
+            </div>
           </nav>
         </div>
       </header>
@@ -266,6 +289,18 @@
 
               toggleNav("#nav-header-links", "nav__header-links--open");
               toggleNav("#nav-toggle-btn", "nav__toggle-btn--open");
+              toggleNav("#nav-mobile-bg", "nav__mobile-bg--open");
+            });
+
+        var navMobileBg = document.querySelector("#nav-mobile-bg");
+        navMobileBg === null || navMobileBg === void 0
+          ? void 0
+          : navMobileBg.addEventListener("click", function (e) {
+              e.preventDefault(); // console.log("Btn clicked");
+
+              toggleNav("#nav-header-links", "nav__header-links--open");
+              toggleNav("#nav-toggle-btn", "nav__toggle-btn--open");
+              toggleNav("#nav-mobile-bg", "nav__mobile-bg--open");
             });
       };
 
