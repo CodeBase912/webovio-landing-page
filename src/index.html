@@ -16,6 +16,8 @@
         --footer-bg-color: #4f553d;
         --footer-links-color: #d4d4d4;
         --footer-separator: #5d6544;
+        --footer-socials-bg: #444a34;
+        --footer-socials-bg-focused: #cfae1a;
       }
       * {
         margin: 0;
@@ -255,6 +257,52 @@
       .footer__content__contact-details__email {
         color: #fff;
         font-size: 150%;
+        margin-bottom: 20px;
+      }
+
+      .footer__content__contact-details__socials {
+        list-style: none;
+        padding-left: 0;
+        display: flex;
+      }
+
+      .footer__content__contact-details__socials li:not(:last-child) {
+        margin-right: 10px;
+      }
+
+      .footer__content__contact-details__social-icon-link {
+        background-color: var(--footer-socials-bg);
+        border-radius: 50%;
+        padding: 5px;
+        width: 33px;
+        height: 33px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        position: relative;
+      }
+
+      .footer__content__contact-details__social-icon-link:hover,
+      .footer__content__contact-details__social-icon-link:focus {
+        background-color: var(--footer-socials-bg-focused);
+      }
+
+      .footer__content__contact-details__social-icon-link svg {
+        width: 25px;
+        height: 25px;
+      }
+
+      .footer__content__contact-details__social-icon-link path {
+        fill: #fff;
+      }
+
+      .footer__content__contact-details__social-icon-link span {
+        opacity: 0;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
 
       .footer__site-branding {
@@ -465,7 +513,64 @@
             <p class="footer__content__contact-details__email">
               info.webovio@gmail.com
             </p>
-            <div class="footer__content__contact-details__socials"></div>
+            <ul class="footer__content__contact-details__socials">
+              <li>
+                <a
+                  href="#"
+                  class="footer__content__contact-details__social-icon-link"
+                >
+                  <!-- Facebook Icon -->
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path
+                      d="M18.6667 18.0001H22L23.3334 12.6667H18.6667V10.0001C18.6667 8.62675 18.6667 7.33341 21.3334 7.33341H23.3334V2.85341C22.8987 2.79608 21.2574 2.66675 19.524 2.66675C15.904 2.66675 13.3334 4.87608 13.3334 8.93341V12.6667H9.33337V18.0001H13.3334V29.3334H18.6667V18.0001Z"
+                    />
+                  </svg>
+                  <span>Our Facebook Profile</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="footer__content__contact-details__social-icon-link"
+                >
+                  <!-- Twitter Icon -->
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path
+                      d="M29.5493 7.54124C28.5314 7.99149 27.452 8.2872 26.3467 8.41857C27.5117 7.72181 28.3836 6.62525 28.8 5.33324C27.7067 5.9839 26.508 6.4399 25.2587 6.68657C24.4195 5.78867 23.3072 5.19319 22.0946 4.99268C20.8821 4.79218 19.6373 4.99789 18.5537 5.57784C17.4701 6.15779 16.6085 7.07948 16.1028 8.19963C15.5971 9.31977 15.4757 10.5756 15.7573 11.7719C13.5402 11.6608 11.3711 11.0846 9.39106 10.0808C7.411 9.07698 5.66418 7.66797 4.26401 5.94524C3.7684 6.7965 3.50795 7.7642 3.50934 8.74924C3.50934 10.6826 4.49334 12.3906 5.98934 13.3906C5.10402 13.3627 4.23819 13.1236 3.46401 12.6932V12.7626C3.46428 14.0502 3.90983 15.2981 4.72514 16.2946C5.54044 17.2912 6.67532 17.9752 7.93734 18.2306C7.1155 18.4533 6.25375 18.4861 5.41734 18.3266C5.77317 19.4349 6.46669 20.4042 7.4008 21.0987C8.33491 21.7933 9.46285 22.1783 10.6267 22.1999C9.46998 23.1083 8.14558 23.7799 6.72918 24.1761C5.31279 24.5724 3.83218 24.6856 2.37201 24.5092C4.92094 26.1485 7.88814 27.0187 10.9187 27.0159C21.176 27.0159 26.7853 18.5186 26.7853 11.1492C26.7853 10.9092 26.7787 10.6666 26.768 10.4292C27.8598 9.64013 28.8021 8.66259 29.5507 7.54257L29.5493 7.54124Z"
+                    />
+                  </svg>
+                  <span>Our Twitter Profile</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="footer__content__contact-details__social-icon-link"
+                >
+                  <!-- LinkedIn Icon -->
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path
+                      d="M9.25338 6.66678C9.25302 7.37402 8.97173 8.05216 8.47139 8.55201C7.97104 9.05185 7.29262 9.33247 6.58538 9.33211C5.87813 9.33176 5.2 9.05047 4.70015 8.55012C4.2003 8.04977 3.91969 7.37136 3.92004 6.66411C3.9204 5.95687 4.20169 5.27873 4.70204 4.77889C5.20238 4.27904 5.8808 3.99843 6.58804 3.99878C7.29529 3.99913 7.97343 4.28042 8.47327 4.78077C8.97312 5.28112 9.25373 5.95954 9.25338 6.66678ZM9.33338 11.3068H4.00004V28.0001H9.33338V11.3068ZM17.76 11.3068H12.4534V28.0001H17.7067V19.2401C17.7067 14.3601 24.0667 13.9068 24.0667 19.2401V28.0001H29.3334V17.4268C29.3334 9.20011 19.92 9.50678 17.7067 13.5468L17.76 11.3068Z"
+                    />
+                  </svg>
+                  <span>Our LinkedIn Profile</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="footer__content__contact-details__social-icon-link"
+                >
+                  <!-- Youtube Icon -->
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <path
+                      d="M28.724 8.66392C29.3334 11.0399 29.3334 15.9999 29.3334 15.9999C29.3334 15.9999 29.3334 20.9599 28.724 23.3359C28.3854 24.6493 27.3947 25.6826 26.14 26.0319C23.8614 26.6666 16 26.6666 16 26.6666C16 26.6666 8.14269 26.6666 5.86002 26.0319C4.60002 25.6773 3.61069 24.6453 3.27602 23.3359C2.66669 20.9599 2.66669 15.9999 2.66669 15.9999C2.66669 15.9999 2.66669 11.0399 3.27602 8.66392C3.61469 7.35059 4.60535 6.31725 5.86002 5.96792C8.14269 5.33325 16 5.33325 16 5.33325C16 5.33325 23.8614 5.33325 26.14 5.96792C27.4 6.32259 28.3894 7.35459 28.724 8.66392ZM13.3334 20.6666L21.3334 15.9999L13.3334 11.3333V20.6666Z"
+                    />
+                  </svg>
+                  <span>Our Youtube Channel</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
         <div class="footer__site-branding">
