@@ -23,6 +23,7 @@
       body {
         padding: 0 77px;
         overflow-x: hidden;
+        background-color: var(--footer-bg-color);
       }
 
       /* a-tag styles */
@@ -45,6 +46,17 @@
         display: flex;
       }
 
+      .site-branding__logo a {
+        position: relative;
+      }
+
+      .site-branding__logo__access {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
       .nav__toggle-btn {
         outline: none;
         border: none;
@@ -52,25 +64,66 @@
         z-index: 51;
       }
 
-      .nav__toggle-btn--open .nav__hamburger-menu__bar:nth-child(1) {
-        transform: rotateZ(-45deg);
+      .nav__hamburger-menu__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: none;
       }
-      .nav__toggle-btn--open .nav__hamburger-menu__bar:nth-child(2) {
-        opacity: 0;
+
+      .nav__hamburger-menu__btn:focus {
+        border: 2px solid #000;
       }
-      .nav__toggle-btn--open .nav__hamburger-menu__bar:nth-child(3) {
-        transform: rotateZ(45deg);
+
+      .nav__hamburger-menu__bars {
+        height: 18px;
       }
 
       .nav__hamburger-menu__bar {
         content: "";
         width: 22px;
         height: 3px;
-        margin-top: 4px;
         border-radius: 2px;
-        background-color: white;
-        transform-origin: 21px;
+        background-color: #000;
+        transform-origin: 11px;
         transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+      }
+
+      .nav__hamburger-menu__bar:not(:first-child) {
+        margin-top: 4px;
+      }
+
+      .nav__hamburger-menu__animated-bar {
+        position: relative;
+        margin-top: 4px;
+      }
+
+      .nav__hamburger-menu__animated-bar
+        .nav__hamburger-menu__bar:nth-child(2) {
+        position: absolute;
+        top: 0;
+        margin-top: 0;
+      }
+
+      .nav__toggle-btn--open .nav__hamburger-menu__bar {
+        /* transform: rotateZ(-45deg); */
+        opacity: 0;
+      }
+      .nav__toggle-btn--open
+        .nav__hamburger-menu__animated-bar
+        > .nav__hamburger-menu__bar {
+        transform: rotateZ(45deg);
+        opacity: 1;
+      }
+      .nav__toggle-btn--open
+        .nav__hamburger-menu__animated-bar
+        .nav__hamburger-menu__bar:nth-child(2) {
+        transform: rotateZ(-45deg);
+        opacity: 1;
       }
 
       .nav__header-links {
@@ -82,14 +135,7 @@
         height: 100vh;
         padding-left: 0;
         background-color: var(--footer-bg-color);
-
         z-index: 50;
-        /* top: -100vh;
-    right: 0;
-    padding-left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: #000; */
 
         transition: transform 0.4s ease-in-out;
       }
@@ -155,14 +201,24 @@
                   </g>
                 </g>
               </svg>
+              <span class="site-branding__logo__access">Logo</span>
             </a>
           </div>
           <nav>
             <div id="nav-toggle-btn" class="nav__toggle-btn">
-              <button id="nav__header-links" class="nav__hamburger-menu__btn">
-                <div class="nav__hamburger-menu__bar"></div>
-                <div class="nav__hamburger-menu__bar"></div>
-                <div class="nav__hamburger-menu__bar"></div>
+              <button
+                id="nav__header-links"
+                class="nav__hamburger-menu__btn"
+                aria-label="Toggle Menu"
+              >
+                <div class="nav__hamburger-menu__bars">
+                  <div class="nav__hamburger-menu__bar"></div>
+                  <div class="nav__hamburger-menu__animated-bar">
+                    <div class="nav__hamburger-menu__bar"></div>
+                    <div class="nav__hamburger-menu__bar"></div>
+                  </div>
+                  <div class="nav__hamburger-menu__bar"></div>
+                </div>
               </button>
             </div>
             <ul id="nav-header-links" class="nav__header-links">
