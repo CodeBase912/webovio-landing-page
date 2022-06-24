@@ -1,0 +1,17 @@
+## Settings for build command
+[build]
+  command = "npm run build"
+  functions = ".netlify"
+  publish = "./build"
+
+## Production Environment variables
+[context.production.environment]
+  NODE_ENV = "production"
+  
+## Settings for `netlify dev` command
+[dev]
+  port = 3000 # Port that the dev server will be listening on
+  publish = "./src" # Folder with the static content for _redirect file
+
+
+## more info on configuring this file: https://www.netlify.com/docs/netlify-toml-reference/
