@@ -15,6 +15,7 @@
         --primary-color: #ffd723;
         --footer-bg-color: #4f553d;
         --footer-links-color: #b6c197;
+        --footer-separator: #5d6544;
       }
       * {
         margin: 0;
@@ -39,18 +40,25 @@
         color: var(--footer-links-color);
       }
 
-      a:focus,
       a:hover {
+        color: #fff;
+      }
+      a:focus {
         text-decoration: underline;
+        color: #fff;
+      }
+
+      .container {
+        padding: 0 20px;
+        max-width: 1108px;
+        margin: auto;
       }
 
       .header__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 23px 50px;
-        max-width: 1108px;
-        margin: auto;
+        padding: 23px 0;
       }
 
       .site-branding__logo a {
@@ -183,27 +191,91 @@
       /* Footer Styles */
       .footer__site-info {
         display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 100%;
+        padding-bottom: 70px;
+
+        border-bottom: 1px solid var(--footer-separator);
       }
+
+      .footer__site-info__phone {
+        margin-right: 80px;
+        margin-bottom: 20px;
+      }
+
       .footer__site-info__title {
         color: var(--footer-links-color);
       }
+
       .footer__site-info__content {
         color: #fff;
       }
+
+      .footer__content {
+        margin-top: 70px;
+        gap: 20px;
+      }
+
+      .footer__content__links {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        row-gap: 60px;
+        margin-bottom: 40px;
+      }
+
+      .footer__content__links__group__links-container {
+        list-style: none;
+        padding-left: 0;
+      }
+
       .footer__content__links__group__header {
         color: #fff;
+        margin-bottom: 40px;
       }
+
       .footer__content__links__group__link {
         color: var(--footer-links-color);
+        margin-top: 20px;
       }
+
       .footer__content__contact-details__header {
         color: #fff;
       }
+
       .footer__content__contact-details__content {
         color: var(--footer-links-color);
       }
+
       .footer__content__contact-details__email {
         color: #fff;
+      }
+
+      @media screen and (min-width: 580px) {
+        .footer__content__links {
+          display: flex;
+          justify-content: space-between;
+          gap: 20px;
+          flex: 2;
+          padding-right: 55px;
+        }
+      }
+
+      /* Mobile (landscape): 836px & above */
+      @media screen and (min-width: 836px) {
+        .footer__site-info {
+          gap: 131px;
+        }
+        .footer__content {
+          display: flex;
+          gap: 0;
+        }
+
+        .footer__content__contact-details {
+          flex: 1;
+          padding-left: 55px;
+          border-left: 1px solid var(--footer-separator);
+        }
       }
     </style>
   </head>
