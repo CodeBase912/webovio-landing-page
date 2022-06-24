@@ -22,9 +22,10 @@
       }
 
       body {
-        padding: 0 77px;
         overflow-x: hidden;
         background-color: var(--footer-bg-color);
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
       }
 
       /* a-tag styles */
@@ -46,6 +47,10 @@
       .header__container {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        padding: 23px 50px;
+        max-width: 1108px;
+        margin: auto;
       }
 
       .site-branding__logo a {
@@ -149,6 +154,9 @@
       .nav__header-links {
         list-style: none;
         position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         top: 0;
         right: -250px;
         width: 250px;
@@ -170,6 +178,32 @@
         /* background: red; */
         text-align: center;
         padding: 20px 0;
+      }
+
+      /* Footer Styles */
+      .footer__site-info {
+        display: flex;
+      }
+      .footer__site-info__title {
+        color: var(--footer-links-color);
+      }
+      .footer__site-info__content {
+        color: #fff;
+      }
+      .footer__content__links__group__header {
+        color: #fff;
+      }
+      .footer__content__links__group__link {
+        color: var(--footer-links-color);
+      }
+      .footer__content__contact-details__header {
+        color: #fff;
+      }
+      .footer__content__contact-details__content {
+        color: var(--footer-links-color);
+      }
+      .footer__content__contact-details__email {
+        color: #fff;
       }
     </style>
   </head>
@@ -254,7 +288,91 @@
         </div>
       </header>
       <main></main>
-      <footer></footer>
+      <footer>
+        <div class="footer__site-info">
+          <div class="footer__site-info__phone">
+            <h3 class="footer__site-info__title">Phone</h3>
+            <p class="footer__site-info__content">+32 50 31 28 32</p>
+          </div>
+          <div class="footer__site-info__address">
+            <h3 class="footer__site-info__title">Address</h3>
+            <p class="footer__site-info__content">491 Merlin Crest Suite 963</p>
+          </div>
+        </div>
+        <div class="footer__content">
+          <div class="footer__content__links">
+            <div class="footer__content__links__group">
+              <h2 class="footer__content__links__group__header">SERVICES</h2>
+              <ul class="footer__content__links__group__links-container">
+                <li class="footer__content__links__group__link">
+                  <a href="#">Strategy Design</a>
+                </li>
+                <li class="footer__content__links__group__link">
+                  <a href="#">Product Design</a>
+                </li>
+                <li class="footer__content__links__group__link">
+                  <a href="#">Content Strategy</a>
+                </li>
+                <li class="footer__content__links__group__link">
+                  <a href="#">Brand Strategy</a>
+                </li>
+                <li class="footer__content__links__group__link">
+                  <a href="#">Development</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__content__links__group">
+              <h2 class="footer__content__links__group__header">
+                HELP AND ADVICE
+              </h2>
+              <ul class="footer__content__links__group__links-container">
+                <li class="footer__content__links__group__link">
+                  <a href="#">How it works</a>
+                </li>
+                <li class="footer__content__links__group__link">
+                  <a href="#">Contact Support</a>
+                </li>
+                <li class="footer__content__links__group__link">
+                  <a href="#">Privacy Policy</a>
+                </li>
+                <li class="footer__content__links__group__link">
+                  <a href="#">FAQ</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__content__links__group">
+              <h2 class="footer__content__links__group__header">COMPANY</h2>
+              <ul class="footer__content__links__group__links-container">
+                <li class="footer__content__links__group__link">
+                  <a href="#">About</a>
+                </li>
+                <li class="footer__content__links__group__link">
+                  <a href="#">Blog</a>
+                </li>
+                <li class="footer__content__links__group__link">
+                  <a href="#">Contact</a>
+                </li>
+                <li class="footer__content__links__group__link">
+                  <a href="#">Jobs</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__content__contact-details">
+            <h2 class="footer__content__contact-details__header">
+              GET IN TOUCH
+            </h2>
+            <p class="footer__content__contact-details__content">
+              Feel free to get in touch with us vai email
+            </p>
+            <p class="footer__content__contact-details__email">
+              info.webovio@gmail.com
+            </p>
+            <div class="footer__content__contact-details__socials"></div>
+          </div>
+        </div>
+        <div class="footer__site-branding"></div>
+      </footer>
     </div>
 
     <!-- Critical (App Shell) JS Scripts -->
