@@ -45,9 +45,10 @@ Create a homepage following the given design. The page should be responsive. Ful
 
 #### User stories
 
-- User can see a page following the given design
-- User can see a collapsed navigation
-- When the user selects the hamburger menu, user can see the navigation
+- As a user, I can see a page following the given design
+- As a user, I can see a collapsed navigation
+- As a user, when I select the hamburger menu, I can see the navigation
+- As a user, I can click on the slider image buttons on the hero section to see different images
 
 ### My Solution
 
