@@ -6,7 +6,7 @@
    A landing page for a design agency built from a free Adobe XD design template.
 </div>
 
-<div align="center">
+<!-- <div align="center">
   <h3>
     <a href="https://interior-consultant-solution.netlify.app/">
       Live Demo
@@ -16,7 +16,7 @@
       Design (Adobe XD)
     </a>
   </h3>
-</div>
+</div> -->
 
 <!-- TABLE OF CONTENTS -->
 
