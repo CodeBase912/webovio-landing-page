@@ -32,7 +32,9 @@
         font-size: 100%;
       }
 
-      /* a-tag styles */
+      /* ---------------------------------------------------------- */
+      /* GLOBAL ANCHOR TAG STYLES */
+      /* ---------------------------------------------------------- */
       a {
         text-decoration: none;
         outline: none;
@@ -51,17 +53,22 @@
         color: #fff;
       }
 
-      .container {
-        padding: 0 20px;
-        max-width: 1108px;
-        margin: auto;
+      /* ---------------------------------------------------------- */
+      /* HEADER STYLES */
+      /* ---------------------------------------------------------- */
+      header {
+        position: fixed;
+        z-index: 50;
+        width: 100%;
       }
-
       .header__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 23px 0;
+        width: 100%;
+        padding: 23px 20px;
+        max-width: 1108px;
+        margin: auto;
       }
 
       .site-branding__logo a {
@@ -76,6 +83,12 @@
         left: 0;
       }
 
+      /* ---------------------------------------------------------- */
+      /* NAV STYLES */
+      /* ---------------------------------------------------------- */
+      nav {
+        display: relative;
+      }
       .nav__mobile-bg {
         position: fixed;
         background-color: #0000005b;
@@ -98,7 +111,7 @@
         outline: none;
         border: none;
         position: relative;
-        z-index: 51;
+        z-index: 52;
       }
 
       .nav__hamburger-menu__btn {
@@ -165,7 +178,7 @@
 
       .nav__header-links {
         list-style: none;
-        position: absolute;
+        position: fixed;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -192,7 +205,28 @@
         padding: 20px 0;
       }
 
-      /* Footer Styles */
+      /* ---------------------------------------------------------- */
+      /* MAIN CCONTENT STYLES */
+      /* ---------------------------------------------------------- */
+      .hero__img-slider ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .hero__img-slider img {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+      }
+
+      /* ---------------------------------------------------------- */
+      /* FOOTER STYLES */
+      /* ---------------------------------------------------------- */
+      .footer__container {
+        padding: 20px;
+        max-width: 1108px;
+        margin: auto;
+      }
       .footer__site-info {
         display: flex;
         flex-wrap: wrap;
@@ -346,8 +380,12 @@
 
       /* Laptop: 1000px & above */
       @media screen and (min-width: 1000px) {
-        .container {
-          padding: 0 60px;
+        .header__container {
+          padding: 23px 60px;
+        }
+
+        .footer__container {
+          padding: 60px;
         }
       }
     </style>
@@ -405,6 +443,7 @@
               <span class="site-branding__logo__access">Logo</span>
             </a>
           </div>
+
           <nav>
             <div id="nav-toggle-btn" class="nav__toggle-btn">
               <button
@@ -422,15 +461,15 @@
                 </div>
               </button>
             </div>
-            <div id="nav-mobile-bg" class="nav__mobile-bg">
-              <ul id="nav-header-links" class="nav__header-links">
-                <li class="nav__link"><a href="#">About Us</a></li>
-                <li class="nav__link"><a href="#">Blog</a></li>
-                <li class="nav__link"><a href="#">Contact Us</a></li>
-                <li class="nav__link"><a href="#">Jobs</a></li>
-              </ul>
-            </div>
+
+            <ul id="nav-header-links" class="nav__header-links">
+              <li class="nav__link"><a href="#">About Us</a></li>
+              <li class="nav__link"><a href="#">Blog</a></li>
+              <li class="nav__link"><a href="#">Contact Us</a></li>
+              <li class="nav__link"><a href="#">Jobs</a></li>
+            </ul>
           </nav>
+          <div id="nav-mobile-bg" class="nav__mobile-bg"></div>
         </div>
       </header>
 
@@ -438,201 +477,228 @@
       <main>
         <section class="hero">
           <div class="hero__content"></div>
-          <div class="hero__img-slider"></div>
+          <div class="hero__img-slider">
+            <ul>
+              <li>
+                <img
+                  src="./assets/Slider_Image_1.png"
+                  alt="Slider Image 1"
+                  data-img-index="0"
+                />
+              </li>
+              <li>
+                <img
+                  src="./assets/Slider_Image_2.png"
+                  alt="Slider Image 2"
+                  data-img-index="1"
+                />
+              </li>
+            </ul>
+          </div>
         </section>
       </main>
 
       <!-- Footer -->
       <footer>
-        <div class="footer__site-info">
-          <div class="footer__site-info__phone">
-            <h3 class="footer__site-info__title">Phone</h3>
-            <p class="footer__site-info__content">+32 50 31 28 32</p>
-          </div>
-          <div class="footer__site-info__address">
-            <h3 class="footer__site-info__title">Address</h3>
-            <p class="footer__site-info__content">491 Merlin Crest Suite 963</p>
-          </div>
-        </div>
-        <div class="footer__content">
-          <div class="footer__content__links">
-            <div class="footer__content__links__group">
-              <h2 class="footer__content__links__group__header">SERVICES</h2>
-              <ul class="footer__content__links__group__links-container">
-                <li class="footer__content__links__group__link">
-                  <a href="#">Strategy Design</a>
-                </li>
-                <li class="footer__content__links__group__link">
-                  <a href="#">Product Design</a>
-                </li>
-                <li class="footer__content__links__group__link">
-                  <a href="#">Content Strategy</a>
-                </li>
-                <li class="footer__content__links__group__link">
-                  <a href="#">Brand Strategy</a>
-                </li>
-                <li class="footer__content__links__group__link">
-                  <a href="#">Development</a>
-                </li>
-              </ul>
+        <div class="footer__container">
+          <div class="footer__site-info">
+            <div class="footer__site-info__phone">
+              <h3 class="footer__site-info__title">Phone</h3>
+              <p class="footer__site-info__content">+32 50 31 28 32</p>
             </div>
-            <div class="footer__content__links__group">
-              <h2 class="footer__content__links__group__header">
-                HELP AND ADVICE
+            <div class="footer__site-info__address">
+              <h3 class="footer__site-info__title">Address</h3>
+              <p class="footer__site-info__content">
+                491 Merlin Crest Suite 963
+              </p>
+            </div>
+          </div>
+          <div class="footer__content">
+            <div class="footer__content__links">
+              <div class="footer__content__links__group">
+                <h2 class="footer__content__links__group__header">SERVICES</h2>
+                <ul class="footer__content__links__group__links-container">
+                  <li class="footer__content__links__group__link">
+                    <a href="#">Strategy Design</a>
+                  </li>
+                  <li class="footer__content__links__group__link">
+                    <a href="#">Product Design</a>
+                  </li>
+                  <li class="footer__content__links__group__link">
+                    <a href="#">Content Strategy</a>
+                  </li>
+                  <li class="footer__content__links__group__link">
+                    <a href="#">Brand Strategy</a>
+                  </li>
+                  <li class="footer__content__links__group__link">
+                    <a href="#">Development</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__content__links__group">
+                <h2 class="footer__content__links__group__header">
+                  HELP AND ADVICE
+                </h2>
+                <ul class="footer__content__links__group__links-container">
+                  <li class="footer__content__links__group__link">
+                    <a href="#">How it works</a>
+                  </li>
+                  <li class="footer__content__links__group__link">
+                    <a href="#">Contact Support</a>
+                  </li>
+                  <li class="footer__content__links__group__link">
+                    <a href="#">Privacy Policy</a>
+                  </li>
+                  <li class="footer__content__links__group__link">
+                    <a href="#">FAQ</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__content__links__group">
+                <h2 class="footer__content__links__group__header">COMPANY</h2>
+                <ul class="footer__content__links__group__links-container">
+                  <li class="footer__content__links__group__link">
+                    <a href="#">About</a>
+                  </li>
+                  <li class="footer__content__links__group__link">
+                    <a href="#">Blog</a>
+                  </li>
+                  <li class="footer__content__links__group__link">
+                    <a href="#">Contact</a>
+                  </li>
+                  <li class="footer__content__links__group__link">
+                    <a href="#">Jobs</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer__content__contact-details">
+              <h2 class="footer__content__contact-details__header">
+                GET IN TOUCH
               </h2>
-              <ul class="footer__content__links__group__links-container">
-                <li class="footer__content__links__group__link">
-                  <a href="#">How it works</a>
-                </li>
-                <li class="footer__content__links__group__link">
-                  <a href="#">Contact Support</a>
-                </li>
-                <li class="footer__content__links__group__link">
-                  <a href="#">Privacy Policy</a>
-                </li>
-                <li class="footer__content__links__group__link">
-                  <a href="#">FAQ</a>
-                </li>
-              </ul>
-            </div>
-            <div class="footer__content__links__group">
-              <h2 class="footer__content__links__group__header">COMPANY</h2>
-              <ul class="footer__content__links__group__links-container">
-                <li class="footer__content__links__group__link">
-                  <a href="#">About</a>
-                </li>
-                <li class="footer__content__links__group__link">
-                  <a href="#">Blog</a>
-                </li>
-                <li class="footer__content__links__group__link">
-                  <a href="#">Contact</a>
-                </li>
-                <li class="footer__content__links__group__link">
-                  <a href="#">Jobs</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="footer__content__contact-details">
-            <h2 class="footer__content__contact-details__header">
-              GET IN TOUCH
-            </h2>
-            <p class="footer__content__contact-details__content">
-              Feel free to get in touch with us via email
-            </p>
-            <p class="footer__content__contact-details__email">
-              info.webovio@gmail.com
-            </p>
-            <ul class="footer__content__contact-details__socials">
-              <li>
-                <a
-                  href="#"
-                  class="footer__content__contact-details__social-icon-link"
-                >
-                  <!-- Facebook Icon -->
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path
-                      d="M18.6667 18.0001H22L23.3334 12.6667H18.6667V10.0001C18.6667 8.62675 18.6667 7.33341 21.3334 7.33341H23.3334V2.85341C22.8987 2.79608 21.2574 2.66675 19.524 2.66675C15.904 2.66675 13.3334 4.87608 13.3334 8.93341V12.6667H9.33337V18.0001H13.3334V29.3334H18.6667V18.0001Z"
-                    />
-                  </svg>
-                  <span>Our Facebook Profile</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="footer__content__contact-details__social-icon-link"
-                >
-                  <!-- Twitter Icon -->
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path
-                      d="M29.5493 7.54124C28.5314 7.99149 27.452 8.2872 26.3467 8.41857C27.5117 7.72181 28.3836 6.62525 28.8 5.33324C27.7067 5.9839 26.508 6.4399 25.2587 6.68657C24.4195 5.78867 23.3072 5.19319 22.0946 4.99268C20.8821 4.79218 19.6373 4.99789 18.5537 5.57784C17.4701 6.15779 16.6085 7.07948 16.1028 8.19963C15.5971 9.31977 15.4757 10.5756 15.7573 11.7719C13.5402 11.6608 11.3711 11.0846 9.39106 10.0808C7.411 9.07698 5.66418 7.66797 4.26401 5.94524C3.7684 6.7965 3.50795 7.7642 3.50934 8.74924C3.50934 10.6826 4.49334 12.3906 5.98934 13.3906C5.10402 13.3627 4.23819 13.1236 3.46401 12.6932V12.7626C3.46428 14.0502 3.90983 15.2981 4.72514 16.2946C5.54044 17.2912 6.67532 17.9752 7.93734 18.2306C7.1155 18.4533 6.25375 18.4861 5.41734 18.3266C5.77317 19.4349 6.46669 20.4042 7.4008 21.0987C8.33491 21.7933 9.46285 22.1783 10.6267 22.1999C9.46998 23.1083 8.14558 23.7799 6.72918 24.1761C5.31279 24.5724 3.83218 24.6856 2.37201 24.5092C4.92094 26.1485 7.88814 27.0187 10.9187 27.0159C21.176 27.0159 26.7853 18.5186 26.7853 11.1492C26.7853 10.9092 26.7787 10.6666 26.768 10.4292C27.8598 9.64013 28.8021 8.66259 29.5507 7.54257L29.5493 7.54124Z"
-                    />
-                  </svg>
-                  <span>Our Twitter Profile</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="footer__content__contact-details__social-icon-link"
-                >
-                  <!-- LinkedIn Icon -->
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path
-                      d="M9.25338 6.66678C9.25302 7.37402 8.97173 8.05216 8.47139 8.55201C7.97104 9.05185 7.29262 9.33247 6.58538 9.33211C5.87813 9.33176 5.2 9.05047 4.70015 8.55012C4.2003 8.04977 3.91969 7.37136 3.92004 6.66411C3.9204 5.95687 4.20169 5.27873 4.70204 4.77889C5.20238 4.27904 5.8808 3.99843 6.58804 3.99878C7.29529 3.99913 7.97343 4.28042 8.47327 4.78077C8.97312 5.28112 9.25373 5.95954 9.25338 6.66678ZM9.33338 11.3068H4.00004V28.0001H9.33338V11.3068ZM17.76 11.3068H12.4534V28.0001H17.7067V19.2401C17.7067 14.3601 24.0667 13.9068 24.0667 19.2401V28.0001H29.3334V17.4268C29.3334 9.20011 19.92 9.50678 17.7067 13.5468L17.76 11.3068Z"
-                    />
-                  </svg>
-                  <span>Our LinkedIn Profile</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="footer__content__contact-details__social-icon-link"
-                >
-                  <!-- Youtube Icon -->
-                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                    <path
-                      d="M28.724 8.66392C29.3334 11.0399 29.3334 15.9999 29.3334 15.9999C29.3334 15.9999 29.3334 20.9599 28.724 23.3359C28.3854 24.6493 27.3947 25.6826 26.14 26.0319C23.8614 26.6666 16 26.6666 16 26.6666C16 26.6666 8.14269 26.6666 5.86002 26.0319C4.60002 25.6773 3.61069 24.6453 3.27602 23.3359C2.66669 20.9599 2.66669 15.9999 2.66669 15.9999C2.66669 15.9999 2.66669 11.0399 3.27602 8.66392C3.61469 7.35059 4.60535 6.31725 5.86002 5.96792C8.14269 5.33325 16 5.33325 16 5.33325C16 5.33325 23.8614 5.33325 26.14 5.96792C27.4 6.32259 28.3894 7.35459 28.724 8.66392ZM13.3334 20.6666L21.3334 15.9999L13.3334 11.3333V20.6666Z"
-                    />
-                  </svg>
-                  <span>Our Youtube Channel</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer__site-branding">
-          <div class="site-branding__logo">
-            <a href="/">
-              <svg width="197.342" height="28.085" viewBox="0 0 197.342 28.085">
-                <g id="Logo" transform="translate(-1.991)">
-                  <g id="webovio." transform="translate(51.492)">
-                    <path
-                      id="webovio"
-                      d="M120.434,16.462c0-5.232,4.179-9.155,9.553-9.155,5.288,0,9.41,3.81,9.41,9.069,0,5.316-3.838,9.325-9.525,9.325A9.411,9.411,0,0,1,120.434,16.462Zm-49.328,0c0-5.232,4.18-9.155,9.553-9.155,5.288,0,9.41,3.81,9.41,9.069,0,5.316-3.838,9.325-9.524,9.325A9.411,9.411,0,0,1,71.106,16.462ZM55.469,23.285V25.1H50.295V3.326h5.26V9.3a9.175,9.175,0,0,1,5.374-1.99c5.145,0,8.187,4.35,8.187,9.1,0,4.862-3.1,9.127-8.017,9.127A7.4,7.4,0,0,1,55.469,23.285ZM29.938,16.4a8.724,8.724,0,0,1,8.928-9.1c5.032,0,8.586,3.326,8.586,9.553v.151c.005.335.023.553,0,.9H35.169a3.865,3.865,0,0,0,4.094,3.07,4.7,4.7,0,0,0,3.623-2.211l.157-.205s2.579,1.487,3.788,2.213l.335.2a9.128,9.128,0,0,1-8.159,4.549C33.634,25.531,29.938,22.262,29.938,16.4ZM112.3,25.1V7.648h5.288V25.1Zm-13.675,0L91.32,7.648h5.914l3.81,10.207,3.582-10.207H110.2L103.347,25.1ZM17.6,25.1l-3.241-9.383L11.23,25.1H6.653L0,7.648H5.573l3.469,9.666,3.184-9.666h4.236l3.354,9.724,3.441-9.724h5.487L22.176,25.1ZM111.791,3.213a3.2,3.2,0,0,1,6.4-.058,3.246,3.246,0,0,1-3.27,3.242A3.131,3.131,0,0,1,111.791,3.213Z"
-                      fill="#fff"
-                    />
-                    <path
-                      id="_."
-                      data-name="."
-                      d="M3.27,0a3.288,3.288,0,0,1,3.27,3.27,3.288,3.288,0,0,1-3.27,3.27A3.288,3.288,0,0,1,0,3.27,3.288,3.288,0,0,1,3.27,0Z"
-                      transform="translate(141.302 18.808)"
-                      fill="#edb91b"
-                    />
-                  </g>
-                  <g
-                    id="Group_3"
-                    data-name="Group 3"
-                    transform="translate(0 3.322)"
+              <p class="footer__content__contact-details__content">
+                Feel free to get in touch with us via email
+              </p>
+              <p class="footer__content__contact-details__email">
+                info.webovio@gmail.com
+              </p>
+              <ul class="footer__content__contact-details__socials">
+                <li>
+                  <a
+                    href="#"
+                    class="footer__content__contact-details__social-icon-link"
                   >
-                    <path
-                      id="Triangle"
-                      d="M14.1,3.721a2.6,2.6,0,0,1,4.465,0l14.1,23.5H4.6a2.6,2.6,0,0,1-2.233-3.943Z"
-                      transform="translate(42.605 27.22) rotate(180)"
-                      fill="#edb91b"
-                    />
-                    <path
-                      id="Triangle_Copy"
-                      data-name="Triangle Copy"
-                      d="M-14.1,3.721a2.6,2.6,0,0,0-4.465,0l-14.1,23.5H-4.6a2.6,2.6,0,0,0,2.233-3.943Z"
-                      transform="translate(0 27.22) rotate(-180)"
-                      fill="#fff"
-                    />
-                    <path
-                      id="Rectangle"
-                      d="M0,0H22.723L11.362,18.936Z"
-                      transform="translate(9.941)"
-                      fill="#eef0e7"
-                    />
-                  </g>
-                </g>
-              </svg>
-              <span class="site-branding__logo__access">Logo</span>
-            </a>
+                    <!-- Facebook Icon -->
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                      <path
+                        d="M18.6667 18.0001H22L23.3334 12.6667H18.6667V10.0001C18.6667 8.62675 18.6667 7.33341 21.3334 7.33341H23.3334V2.85341C22.8987 2.79608 21.2574 2.66675 19.524 2.66675C15.904 2.66675 13.3334 4.87608 13.3334 8.93341V12.6667H9.33337V18.0001H13.3334V29.3334H18.6667V18.0001Z"
+                      />
+                    </svg>
+                    <span>Our Facebook Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="footer__content__contact-details__social-icon-link"
+                  >
+                    <!-- Twitter Icon -->
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                      <path
+                        d="M29.5493 7.54124C28.5314 7.99149 27.452 8.2872 26.3467 8.41857C27.5117 7.72181 28.3836 6.62525 28.8 5.33324C27.7067 5.9839 26.508 6.4399 25.2587 6.68657C24.4195 5.78867 23.3072 5.19319 22.0946 4.99268C20.8821 4.79218 19.6373 4.99789 18.5537 5.57784C17.4701 6.15779 16.6085 7.07948 16.1028 8.19963C15.5971 9.31977 15.4757 10.5756 15.7573 11.7719C13.5402 11.6608 11.3711 11.0846 9.39106 10.0808C7.411 9.07698 5.66418 7.66797 4.26401 5.94524C3.7684 6.7965 3.50795 7.7642 3.50934 8.74924C3.50934 10.6826 4.49334 12.3906 5.98934 13.3906C5.10402 13.3627 4.23819 13.1236 3.46401 12.6932V12.7626C3.46428 14.0502 3.90983 15.2981 4.72514 16.2946C5.54044 17.2912 6.67532 17.9752 7.93734 18.2306C7.1155 18.4533 6.25375 18.4861 5.41734 18.3266C5.77317 19.4349 6.46669 20.4042 7.4008 21.0987C8.33491 21.7933 9.46285 22.1783 10.6267 22.1999C9.46998 23.1083 8.14558 23.7799 6.72918 24.1761C5.31279 24.5724 3.83218 24.6856 2.37201 24.5092C4.92094 26.1485 7.88814 27.0187 10.9187 27.0159C21.176 27.0159 26.7853 18.5186 26.7853 11.1492C26.7853 10.9092 26.7787 10.6666 26.768 10.4292C27.8598 9.64013 28.8021 8.66259 29.5507 7.54257L29.5493 7.54124Z"
+                      />
+                    </svg>
+                    <span>Our Twitter Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="footer__content__contact-details__social-icon-link"
+                  >
+                    <!-- LinkedIn Icon -->
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                      <path
+                        d="M9.25338 6.66678C9.25302 7.37402 8.97173 8.05216 8.47139 8.55201C7.97104 9.05185 7.29262 9.33247 6.58538 9.33211C5.87813 9.33176 5.2 9.05047 4.70015 8.55012C4.2003 8.04977 3.91969 7.37136 3.92004 6.66411C3.9204 5.95687 4.20169 5.27873 4.70204 4.77889C5.20238 4.27904 5.8808 3.99843 6.58804 3.99878C7.29529 3.99913 7.97343 4.28042 8.47327 4.78077C8.97312 5.28112 9.25373 5.95954 9.25338 6.66678ZM9.33338 11.3068H4.00004V28.0001H9.33338V11.3068ZM17.76 11.3068H12.4534V28.0001H17.7067V19.2401C17.7067 14.3601 24.0667 13.9068 24.0667 19.2401V28.0001H29.3334V17.4268C29.3334 9.20011 19.92 9.50678 17.7067 13.5468L17.76 11.3068Z"
+                      />
+                    </svg>
+                    <span>Our LinkedIn Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="footer__content__contact-details__social-icon-link"
+                  >
+                    <!-- Youtube Icon -->
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                      <path
+                        d="M28.724 8.66392C29.3334 11.0399 29.3334 15.9999 29.3334 15.9999C29.3334 15.9999 29.3334 20.9599 28.724 23.3359C28.3854 24.6493 27.3947 25.6826 26.14 26.0319C23.8614 26.6666 16 26.6666 16 26.6666C16 26.6666 8.14269 26.6666 5.86002 26.0319C4.60002 25.6773 3.61069 24.6453 3.27602 23.3359C2.66669 20.9599 2.66669 15.9999 2.66669 15.9999C2.66669 15.9999 2.66669 11.0399 3.27602 8.66392C3.61469 7.35059 4.60535 6.31725 5.86002 5.96792C8.14269 5.33325 16 5.33325 16 5.33325C16 5.33325 23.8614 5.33325 26.14 5.96792C27.4 6.32259 28.3894 7.35459 28.724 8.66392ZM13.3334 20.6666L21.3334 15.9999L13.3334 11.3333V20.6666Z"
+                      />
+                    </svg>
+                    <span>Our Youtube Channel</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="copyright">&copy; 2022@webovio. All Rights Reserved.</div>
+          <div class="footer__site-branding">
+            <div class="site-branding__logo">
+              <a href="/">
+                <svg
+                  width="197.342"
+                  height="28.085"
+                  viewBox="0 0 197.342 28.085"
+                >
+                  <g id="Logo" transform="translate(-1.991)">
+                    <g id="webovio." transform="translate(51.492)">
+                      <path
+                        id="webovio"
+                        d="M120.434,16.462c0-5.232,4.179-9.155,9.553-9.155,5.288,0,9.41,3.81,9.41,9.069,0,5.316-3.838,9.325-9.525,9.325A9.411,9.411,0,0,1,120.434,16.462Zm-49.328,0c0-5.232,4.18-9.155,9.553-9.155,5.288,0,9.41,3.81,9.41,9.069,0,5.316-3.838,9.325-9.524,9.325A9.411,9.411,0,0,1,71.106,16.462ZM55.469,23.285V25.1H50.295V3.326h5.26V9.3a9.175,9.175,0,0,1,5.374-1.99c5.145,0,8.187,4.35,8.187,9.1,0,4.862-3.1,9.127-8.017,9.127A7.4,7.4,0,0,1,55.469,23.285ZM29.938,16.4a8.724,8.724,0,0,1,8.928-9.1c5.032,0,8.586,3.326,8.586,9.553v.151c.005.335.023.553,0,.9H35.169a3.865,3.865,0,0,0,4.094,3.07,4.7,4.7,0,0,0,3.623-2.211l.157-.205s2.579,1.487,3.788,2.213l.335.2a9.128,9.128,0,0,1-8.159,4.549C33.634,25.531,29.938,22.262,29.938,16.4ZM112.3,25.1V7.648h5.288V25.1Zm-13.675,0L91.32,7.648h5.914l3.81,10.207,3.582-10.207H110.2L103.347,25.1ZM17.6,25.1l-3.241-9.383L11.23,25.1H6.653L0,7.648H5.573l3.469,9.666,3.184-9.666h4.236l3.354,9.724,3.441-9.724h5.487L22.176,25.1ZM111.791,3.213a3.2,3.2,0,0,1,6.4-.058,3.246,3.246,0,0,1-3.27,3.242A3.131,3.131,0,0,1,111.791,3.213Z"
+                        fill="#fff"
+                      />
+                      <path
+                        id="_."
+                        data-name="."
+                        d="M3.27,0a3.288,3.288,0,0,1,3.27,3.27,3.288,3.288,0,0,1-3.27,3.27A3.288,3.288,0,0,1,0,3.27,3.288,3.288,0,0,1,3.27,0Z"
+                        transform="translate(141.302 18.808)"
+                        fill="#edb91b"
+                      />
+                    </g>
+                    <g
+                      id="Group_3"
+                      data-name="Group 3"
+                      transform="translate(0 3.322)"
+                    >
+                      <path
+                        id="Triangle"
+                        d="M14.1,3.721a2.6,2.6,0,0,1,4.465,0l14.1,23.5H4.6a2.6,2.6,0,0,1-2.233-3.943Z"
+                        transform="translate(42.605 27.22) rotate(180)"
+                        fill="#edb91b"
+                      />
+                      <path
+                        id="Triangle_Copy"
+                        data-name="Triangle Copy"
+                        d="M-14.1,3.721a2.6,2.6,0,0,0-4.465,0l-14.1,23.5H-4.6a2.6,2.6,0,0,0,2.233-3.943Z"
+                        transform="translate(0 27.22) rotate(-180)"
+                        fill="#fff"
+                      />
+                      <path
+                        id="Rectangle"
+                        d="M0,0H22.723L11.362,18.936Z"
+                        transform="translate(9.941)"
+                        fill="#eef0e7"
+                      />
+                    </g>
+                  </g>
+                </svg>
+                <span class="site-branding__logo__access">Logo</span>
+              </a>
+            </div>
+            <div class="copyright">
+              &copy; 2022@webovio. All Rights Reserved.
+            </div>
+          </div>
         </div>
       </footer>
     </div>
