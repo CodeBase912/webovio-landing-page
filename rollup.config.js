@@ -13,6 +13,7 @@ export default {
     name: "mainJS",
     dir: "build",
     format: "esm",
+    sourceMap: process.env.NODE_ENV === "development" ? true : false,
     globals: {
       navbar: "navBar",
     },

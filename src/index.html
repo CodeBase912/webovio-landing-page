@@ -213,6 +213,18 @@
         padding-left: 0;
       }
 
+      .hero__img-slider {
+        overflow-x: scroll;
+      }
+
+      .hero__img-slider__images-container {
+        display: flex;
+        /* overflow-x: scroll; */
+        /* scroll-behavior: "smooth"; */
+
+        transition: all 0.4s ease-in-out;
+      }
+
       .hero__img-slider img {
         width: 100vw;
         height: 100vh;
@@ -477,10 +489,11 @@
       <main>
         <section class="hero">
           <div class="hero__content"></div>
-          <div class="hero__img-slider">
+          <div id="hero-img-slider" class="hero__img-slider">
             <ul
               id="hero-img-slider-images-container"
               class="hero__img-slider__images-container"
+              data-slider-container
             >
               <li class="hero__img-slider__img" data-img-index="1">
                 <img src="./assets/Slider_Image_1.png" alt="Slider Image 1" />
