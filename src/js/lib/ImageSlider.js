@@ -4,6 +4,7 @@ export default class ImageSilder {
   _transitionStyle;
   _prevBtnId;
   _nextBtnId;
+  _autoSwitch;
   _currentIndex;
   _upperBound;
   _lowerBound;
@@ -23,6 +24,7 @@ export default class ImageSilder {
     this._nextBtnId = nextBtnId;
     this._currentIndex = 1;
     this._deviceWidth = window.innerWidth;
+    this._autoSwitch = autoSwitch;
 
     this.sliderInit(imgSliderIdentifier, dataAttributeIdentifier);
 
@@ -93,14 +95,13 @@ export default class ImageSilder {
       !imagesContainer.style.transition ||
       imagesContainer.style.transition === "unset"
     ) {
+      imagesContainer.style.transition = "opacity 0.4s ease-in-out"; // To prevent the slider from scrolling on page load
       imagesContainer.style.transform = `translateX(-${this._deviceWidth}px)`;
       this._transitionStyle = "all 0.4s ease-in-out";
-      imagesContainer.style.transition = this._transitionStyle;
     } else {
       this._transitionStyle = imagesContainer.style.transition;
-      imagesContainer.style.transition = "unset";
+      imagesContainer.style.transition = "opacity 0.4s ease-in-out"; // To prevent the slider from scrolling on page load
       imagesContainer.style.transform = `translateX(-${this._deviceWidth}px)`;
-      imagesContainer.style.transition = this._transitionStyle;
     }
   }
 
@@ -128,10 +129,10 @@ export default class ImageSilder {
         console.log("Show prev Img");
       });
 
-    if (!this._prevBtnId && !this._nextBtnId) {
+    if (this._autoSwitch || (!this._prevBtnId && !this._nextBtnId)) {
       setInterval(() => {
         console.log("Change Image");
-        this._changeImg("previous");
+        this._changeImg("next");
       }, 5000);
     }
   }
@@ -210,11 +211,9 @@ export default class ImageSilder {
     const diff =
       index * this._deviceWidth - this._currentIndex * this._deviceWidth;
     this._currentIndex = index;
-    console.log("Diff: ", diff);
+    // console.log("Diff: ", diff);
 
     // Return the scroll distance
-    // return Math.abs(index) * this._deviceWidth;
-    // return diff;
     return index * this._deviceWidth;
   }
 }
