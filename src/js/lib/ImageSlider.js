@@ -26,12 +26,15 @@ export default class ImageSilder {
     this._deviceWidth = window.innerWidth;
     this._autoSwitch = autoSwitch;
 
+    const imageSlider = document.querySelector(imgSliderIdentifier);
+    // this._deviceWidth = window.innerWidth;
+    this._deviceWidth = imageSlider.getBoundingClientRect().width;
+    console.log("ImageSilder Width: ", this._deviceWidth);
     this.sliderInit(imgSliderIdentifier, dataAttributeIdentifier);
 
     // This sliderInit() function add two more elements to the images NodeList,
     // so the upper bound and lower bound should exclude the positions of these
     // two extra elements clones
-    const imageSlider = document.querySelector(imgSliderIdentifier);
     const imagesContainer = imageSlider.querySelector(
       "[data-slider-container]"
     );
@@ -111,7 +114,11 @@ export default class ImageSilder {
   _initEvents() {
     // Add window resize event to update deviceWidth
     window.addEventListener("resize", (e) => {
-      this._deviceWidth = e.target.innerWidth;
+      this._deviceWidth = document
+        .querySelector(this._imgSliderIdentifier)
+        .getBoundingClientRect().width;
+
+      // this._deviceWidth = e.target.innerWidth;
       // console.log("_deviceWidth: ", this._deviceWidth);
     });
 
@@ -214,6 +221,7 @@ export default class ImageSilder {
     // console.log("Diff: ", diff);
 
     // Return the scroll distance
+    console.log("Scroll Dist>>>> ", index * this._deviceWidth);
     return index * this._deviceWidth;
   }
 }
