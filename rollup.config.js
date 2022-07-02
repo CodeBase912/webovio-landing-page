@@ -13,7 +13,7 @@ export default {
     name: "mainJS",
     dir: "build",
     format: "esm",
-    sourceMap: process.env.NODE_ENV === "development" ? true : false,
+    sourceMap: process.env.DEV_ENV === "development" ? true : false,
     globals: {
       navbar: "navBar",
     },
@@ -21,7 +21,7 @@ export default {
   plugins: [
     nodeResolve(),
     postcss({
-      sourceMap: process.env.NODE_ENV === "production" ? false : true,
+      sourceMap: process.env.DEV_ENV === "production" ? false : true,
       autoModules: true,
       extensions: [".css", ".scss"],
       use: ["sass"],
@@ -29,7 +29,7 @@ export default {
     }),
     html({
       input: "src/**/*.html",
-      minify: process.env.NODE_ENV === "production" ? true : false,
+      minify: process.env.DEV_ENV === "production" ? true : false,
       transformHtml: [
         /**
          *
@@ -60,8 +60,8 @@ export default {
     }),
     babel({ babelHelpers: "bundled" }),
     iife(), // Convert bundled esm into iife, done to support code splitting using iife
-    process.env.NODE_ENV === "production" && uglify(),
-    process.env.NODE_ENV === "development" &&
+    process.env.DEV_ENV === "production" && uglify(),
+    process.env.DEV_ENV === "development" &&
       serve({
         // Launch in browser (default: false)
         open: true,
