@@ -18,7 +18,7 @@
             "value": "/assets/Slider_Image_1.png"
           },
           {
-            "name": "altText",
+            "name": "alt",
             "value": "Slider Image 1"
           }
         ],
@@ -31,7 +31,7 @@
             "value": "/assets/Slider_Image_2.png"
           },
           {
-            "name": "altText",
+            "name": "alt",
             "value": "Slider Image 2"
           }
         ],
