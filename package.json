@@ -4,7 +4,7 @@
   "description": "A landing page for a design agency",
   "main": "src/index.js",
   "scripts": {
-    "prebuild": "rimraf build",
+    "prebuild:watch": "rimraf build",
     "build": "rollup -c",
     "build:watch": "rollup -c -w --environment NODE_ENV:development",
     "build:production": "rollup -c --environment NODE_ENV:production",

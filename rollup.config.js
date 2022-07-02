@@ -47,10 +47,11 @@ export default {
             if (bundle[0].match(/style-inject\.[a-z0-9\-]*\.js$/)) {
               newHtml = newHtml.replace(
                 "<body>",
-                `<body><script src='${bundle[0]}' defer></script>`
+                `<body><script src='./js/${bundle[0]}' defer></script>`
               );
               return bundle;
             }
+            console.log("Bundle: ", bundle[1]);
           });
 
           return newHtml;

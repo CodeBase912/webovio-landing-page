@@ -11,7 +11,7 @@
 ## Settings for `netlify dev` command
 [dev]
   port = 3000 # Port that the dev server will be listening on
-  publish = "./src" # Folder with the static content for _redirect file
+  publish = "./build" # Folder with the static content for _redirect file
 
 
 ## more info on configuring this file: https://www.netlify.com/docs/netlify-toml-reference/
