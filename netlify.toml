@@ -5,8 +5,8 @@
   publish = "./build"
 
 ## Production Environment variables
-[context.production.environment]
-  NODE_ENV = "production"
+#[context.production.environment]
+#  NODE_ENV = "production"
   
 ## Settings for `netlify dev` command
 [dev]
