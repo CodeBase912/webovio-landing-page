@@ -5,6 +5,7 @@ export default class ImageSilder {
   _prevBtnId;
   _nextBtnId;
   _autoSwitch;
+  _switchAfter;
   _currentIndex;
   _upperBound;
   _lowerBound;
@@ -17,7 +18,7 @@ export default class ImageSilder {
     prevBtnId = "",
     nextBtnId = "",
     autoSwitch = false,
-    switchAfter = 3000,
+    switchAfter = 5000,
   }) {
     this._imgSliderIdentifier = imgSliderIdentifier;
     this._prevBtnId = prevBtnId;
@@ -25,6 +26,7 @@ export default class ImageSilder {
     this._currentIndex = 1;
     this._deviceWidth = window.innerWidth;
     this._autoSwitch = autoSwitch;
+    this._switchAfter = switchAfter;
 
     const imageSlider = document.querySelector(imgSliderIdentifier);
     // this._deviceWidth = window.innerWidth;
@@ -144,7 +146,7 @@ export default class ImageSilder {
       setInterval(() => {
         console.log("Change Image");
         this._changeImg("next");
-      }, 5000);
+      }, this._switchAfter);
     }
   }
 
@@ -219,10 +221,7 @@ export default class ImageSilder {
     if (this._currentIndex === index) return 0;
 
     // Update the current index property
-    const diff =
-      index * this._deviceWidth - this._currentIndex * this._deviceWidth;
     this._currentIndex = index;
-    // console.log("Diff: ", diff);
 
     // Return the scroll distance
     console.log("Scroll Dist>>>> ", index * this._deviceWidth);

@@ -2,8 +2,6 @@
 import "../scss/index.scss";
 // Import ImageSlider Class Library
 import ImageSilder from "./lib/ImageSlider.js";
-// Import Config Variables
-import { assetsHost } from "./config";
 // Import Utility Functions
 import getObjectProps from "./utils/getObjectProps";
 import createElement from "./utils/createElement";
@@ -63,12 +61,6 @@ fetch("http://127.0.0.1:5501/src/js/data.json")
           console.log("htmlTag: ", htmlTag);
           // Append the htmlTag to the current contet element
           contentElements[i].append(htmlTag);
-
-          // htmlTag.querySelector("img")?.onload = () => {
-          //   console.log("image loaded");
-          //   contentElements[i].classList.remove("skeleton-image");
-
-          // }
         });
       }
       contentElements[i].classList.remove("skeleton");
@@ -76,7 +68,7 @@ fetch("http://127.0.0.1:5501/src/js/data.json")
     }
 
     // Initialize the image slider
-    const imgSlider = new ImageSilder({
+    new ImageSilder({
       imgSliderIdentifier: "#hero-img-slider",
       dataAttributeIdentifier: "data-img-index",
     });
