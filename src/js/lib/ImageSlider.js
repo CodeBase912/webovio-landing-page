@@ -28,8 +28,12 @@ export default class ImageSilder {
 
     const imageSlider = document.querySelector(imgSliderIdentifier);
     // this._deviceWidth = window.innerWidth;
-    this._deviceWidth = imageSlider.getBoundingClientRect().width;
+    // this._deviceWidth = imageSlider.getBoundingClientRect().width;
     console.log("ImageSilder Width: ", this._deviceWidth);
+    console.log(
+      ("Image width: ",
+      imageSlider.querySelector("img").getBoundingClientRect())
+    );
     this.sliderInit(imgSliderIdentifier, dataAttributeIdentifier);
 
     // This sliderInit() function add two more elements to the images NodeList,
@@ -114,11 +118,11 @@ export default class ImageSilder {
   _initEvents() {
     // Add window resize event to update deviceWidth
     window.addEventListener("resize", (e) => {
-      this._deviceWidth = document
-        .querySelector(this._imgSliderIdentifier)
-        .getBoundingClientRect().width;
+      // this._deviceWidth = document
+      //   .querySelector(this._imgSliderIdentifier)
+      //   .getBoundingClientRect().width;
 
-      // this._deviceWidth = e.target.innerWidth;
+      this._deviceWidth = e.target.innerWidth;
       // console.log("_deviceWidth: ", this._deviceWidth);
     });
 

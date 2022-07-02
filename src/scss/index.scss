@@ -1,0 +1,87 @@
+/* ---------------------------------------------------------- */
+/* VARIABLES */
+/* ---------------------------------------------------------- */
+$mobileLandscape: 580px;
+$tablet: 836px;
+$laptop: 1000px;
+
+/* ---------------------------------------------------------- */
+/* MAIN CCONTENT STYLES */
+/* ---------------------------------------------------------- */
+.hero {
+  position: relative;
+}
+
+.hero__content-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  @media screen and (min-width: $laptop) {
+    & {
+      max-width: 1600px;
+      max-height: 1000px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.hero__content {
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media screen and (min-width: $laptop) {
+    & {
+      padding: 0 60px;
+      max-width: 1108px;
+      margin: auto;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.hero__content__title {
+  margin-bottom: 30px;
+  font-size: 375%;
+  max-width: 616px;
+  width: 100%;
+
+  @media screen and (min-width: $laptop) {
+    & {
+      width: 100%;
+    }
+  }
+}
+.hero__content__description {
+  margin-bottom: 30px;
+  font-size: 120%;
+  max-width: 616px;
+  width: 80%;
+}
+
+.hero__content__cta-btn {
+  background: transparent;
+  border: none;
+  color: var(--primary-color);
+  font-size: 130%;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+.hero__content__cta-btn:focus,
+.hero__content__cta-btn:hover {
+  text-decoration: underline;
+}

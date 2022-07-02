@@ -1,0 +1,42 @@
+{
+  "heroSection": {
+    "heroContent": {
+      "title": "A creative agency for redemptive brands",
+      "description": "Webovio is a leading strategic design firm that builds powerful digital solutions for startups and enterprises.",
+      "callToAction": {
+        "text": "Get in touch",
+        "style": "primary",
+        "link": null,
+        "__type": "cta-btn"
+      }
+    },
+    "ImgSlider": [
+      {
+        "attributes": [
+          {
+            "name": "src",
+            "value": "/assets/Slider_Image_1.png"
+          },
+          {
+            "name": "altText",
+            "value": "Slider Image 1"
+          }
+        ],
+        "__type": "li.img"
+      },
+      {
+        "attributes": [
+          {
+            "name": "src",
+            "value": "/assets/Slider_Image_2.png"
+          },
+          {
+            "name": "altText",
+            "value": "Slider Image 2"
+          }
+        ],
+        "__type": "li.img"
+      }
+    ]
+  }
+}
