@@ -54,12 +54,25 @@ $laptop: 1000px;
 
 .hero__content__title {
   margin-bottom: 30px;
-  font-size: 375%;
+  font-size: 200%;
   max-width: 616px;
   width: 100%;
 
+  @media screen and (min-width: $mobileLandscape) {
+    & {
+      font-size: 250%;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    & {
+      font-size: 375%;
+    }
+  }
+
   @media screen and (min-width: $laptop) {
     & {
+      font-size: 375%;
       width: 100%;
     }
   }

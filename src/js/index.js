@@ -8,12 +8,6 @@ import { assetsHost } from "./config";
 import getObjectProps from "./utils/getObjectProps";
 import createElement from "./utils/createElement";
 
-// Initialize the image slider
-// const imgSlider = new ImageSilder({
-//   imgSliderIdentifier: "#hero-img-slider",
-//   dataAttributeIdentifier: "data-img-index",
-// });
-
 // -----------------------------------------------------------------------
 // FETCH PAGE DATA
 // -----------------------------------------------------------------------
@@ -59,7 +53,8 @@ fetch("http://127.0.0.1:5501/src/js/data.json")
               },
               {
                 name: "data-img-index",
-                value: `${elementIndex}`,
+                // The image index should start at 1
+                value: `${elementIndex + 1}`,
               },
             ],
             child: element.attributes,
@@ -79,4 +74,10 @@ fetch("http://127.0.0.1:5501/src/js/data.json")
       contentElements[i].classList.remove("skeleton");
       contentElements[i].classList.remove("skeleton-cta");
     }
+
+    // Initialize the image slider
+    const imgSlider = new ImageSilder({
+      imgSliderIdentifier: "#hero-img-slider",
+      dataAttributeIdentifier: "data-img-index",
+    });
   });
