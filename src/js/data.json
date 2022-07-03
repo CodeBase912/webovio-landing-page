@@ -15,7 +15,7 @@
         "attributes": [
           {
             "name": "src",
-            "value": "/assets/Slider_Image_1.png"
+            "value": "/Slider_Image_1.png"
           },
           {
             "name": "alt",
@@ -28,7 +28,7 @@
         "attributes": [
           {
             "name": "src",
-            "value": "/assets/Slider_Image_2.png"
+            "value": "/Slider_Image_2.png"
           },
           {
             "name": "alt",

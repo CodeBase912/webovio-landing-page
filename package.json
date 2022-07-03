@@ -6,8 +6,8 @@
   "scripts": {
     "prebuild:watch": "rimraf build",
     "build": "rollup -c",
-    "build:watch": "rollup -c -w --environment NODE_ENV:development",
-    "build:production": "rollup -c --environment NODE_ENV:production",
+    "build:watch": "rollup -c -w --environment DEV_ENV:development",
+    "build:production": "rollup -c --environment DEV_ENV:production",
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix",
     "predev": "rimraf build",

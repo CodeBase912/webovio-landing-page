@@ -144,7 +144,6 @@ export default class ImageSilder {
 
     if (this._autoSwitch || (!this._prevBtnId && !this._nextBtnId)) {
       setInterval(() => {
-        console.log("Change Image");
         this._changeImg("next");
       }, this._switchAfter);
     }
@@ -179,10 +178,6 @@ export default class ImageSilder {
           imagesContainer.style.transform = `translateX(-${this._scrollToDist(
             this._lowerBound + 1
           )}px)`;
-          console.log(
-            "this._currentIndex After reset: ",
-            this._currentIndex + "\n\n"
-          );
         }
       };
     }
@@ -201,14 +196,9 @@ export default class ImageSilder {
           imagesContainer.style.transform = `translateX(-${this._scrollToDist(
             this._upperBound - 1
           )}px)`;
-          console.log(
-            "this._currentIndex After reset: ",
-            this._currentIndex + "\n\n"
-          );
         }
       };
     }
-    console.log("this._currentIndex: ", this._currentIndex + "\n\n");
   }
 
   /**
@@ -224,7 +214,7 @@ export default class ImageSilder {
     this._currentIndex = index;
 
     // Return the scroll distance
-    console.log("Scroll Dist>>>> ", index * this._deviceWidth);
+    // console.log("Scroll Dist>>>> ", index * this._deviceWidth);
     return index * this._deviceWidth;
   }
 }

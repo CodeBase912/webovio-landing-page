@@ -51,7 +51,6 @@ export default {
               );
               return bundle;
             }
-            console.log("Bundle: ", bundle[1]);
           });
 
           return newHtml;
