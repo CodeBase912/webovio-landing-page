@@ -5,6 +5,10 @@ $mobileLandscape: 580px;
 $tablet: 836px;
 $laptop: 1000px;
 
+.container {
+  overflow-x: hidden;
+}
+
 /* ---------------------------------------------------------- */
 /* MAIN CCONTENT STYLES */
 /* ---------------------------------------------------------- */
@@ -97,4 +101,36 @@ $laptop: 1000px;
 .hero__content__cta-btn:focus,
 .hero__content__cta-btn:hover {
   text-decoration: underline;
+}
+
+.hero__client-logos {
+  position: absolute;
+  bottom: -11%;
+  z-index: 2;
+  width: 100%;
+
+  .hero__client-logos__container {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    background-color: #fff;
+    box-shadow: 50px 50px 100px rgba(0, 0, 0, 0.15);
+    padding: 60px;
+    min-width: 100vw;
+  }
+
+  .hero__client-logos__img {
+    margin-right: 30px;
+  }
+
+  @media screen and (min-width: $laptop) {
+    & {
+      padding-left: 60px;
+      max-width: 1108px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: auto;
+      bottom: -118px;
+    }
+  }
 }

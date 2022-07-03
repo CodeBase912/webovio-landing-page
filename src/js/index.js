@@ -5,6 +5,7 @@ import ImageSilder from "./lib/ImageSlider.js";
 // Import Utility Functions
 import getObjectProps from "./utils/getObjectProps";
 import createElement from "./utils/createElement";
+import getComponentName from "./utils/getComponentName";
 
 // -----------------------------------------------------------------------
 // FETCH PAGE DATA
@@ -43,20 +44,42 @@ fetch("http://127.0.0.1:5501/src/js/data.json")
       // Check if the property value is an array
       else if (dataContent?.length > 0) {
         dataContent.map((element, elementIndex) => {
-          const attributes = {
-            parent: [
-              {
-                name: "class",
-                value: "hero__img-slider__img",
-              },
-              {
-                name: "data-img-index",
-                // The image index should start at 1
-                value: `${elementIndex + 1}`,
-              },
-            ],
-            child: element.attributes,
-          };
+          const componentName = getComponentName(
+            contentElements[i].dataset.contentId
+          );
+          console.log("ComponentName: ", componentName);
+          let attributes = {};
+          if (componentName === "ImgSlider") {
+            attributes = {
+              parent: [
+                {
+                  name: "class",
+                  value: "hero__img-slider__img",
+                },
+                {
+                  name: "data-img-index",
+                  // The image index should start at 1
+                  value: `${elementIndex + 1}`,
+                },
+              ],
+              child: element.attributes,
+            };
+          } else if (componentName === "clientLogos") {
+            attributes = {
+              parent: [
+                {
+                  name: "class",
+                  value: "hero__client-logos__img",
+                },
+                {
+                  name: "data-img-index",
+                  // The image index should start at 1
+                  value: `${elementIndex + 1}`,
+                },
+              ],
+              child: element.attributes,
+            };
+          }
           let htmlTag = createElement(element.__type, attributes);
           console.log("htmlTag: ", htmlTag);
           // Append the htmlTag to the current contet element

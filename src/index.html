@@ -252,7 +252,7 @@
         flex-wrap: wrap;
         justify-content: flex-start;
         width: 100%;
-        padding-bottom: 70px;
+        padding: 70px 0;
 
         border-bottom: 1px solid var(--footer-separator);
       }
@@ -534,6 +534,7 @@
       <!-- Main Content -->
       <main>
         <section class="hero">
+          <!-- Hero Content -->
           <div class="hero__content-container">
             <div class="hero__content">
               <h1
@@ -552,6 +553,7 @@
               </div>
             </div>
           </div>
+          <!-- Image slider -->
           <div id="hero-img-slider" class="hero__img-slider">
             <ul
               id="hero-img-slider-images-container"
@@ -572,6 +574,14 @@
                 />
               </li> -->
             </ul>
+          </div>
+
+          <!-- Hero Client Logos -->
+          <div class="hero__client-logos">
+            <ul
+              class="hero__client-logos__container"
+              data-content-id="heroSection.clientLogos"
+            ></ul>
           </div>
         </section>
       </main>

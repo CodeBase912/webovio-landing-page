@@ -37,6 +37,73 @@
         ],
         "__type": "li.img"
       }
+    ],
+    "clientLogos": [
+      {
+        "attributes": [
+          {
+            "name": "src",
+            "value": "/partner-logos/16_Andrew-Porter-Logo.png"
+          },
+          {
+            "name": "alt",
+            "value": "Andrew Porter logo"
+          }
+        ],
+        "__type": "li.img"
+      },
+      {
+        "attributes": [
+          {
+            "name": "src",
+            "value": "/partner-logos/17_Jalen-Rose-Leadership-Academy-Logo.png"
+          },
+          {
+            "name": "alt",
+            "value": "Jalen Rose Leadership Academy logo"
+          }
+        ],
+        "__type": "li.img"
+      },
+      {
+        "attributes": [
+          {
+            "name": "src",
+            "value": "/partner-logos/Wal.png"
+          },
+          {
+            "name": "alt",
+            "value": "Walbridge logo"
+          }
+        ],
+        "__type": "li.img"
+      },
+      {
+        "attributes": [
+          {
+            "name": "src",
+            "value": "/partner-logos/Ideal.png"
+          },
+          {
+            "name": "alt",
+            "value": "Ideal logo"
+          }
+        ],
+        "__type": "li.img"
+      },
+      {
+        "attributes": [
+          {
+            "name": "src",
+            "value": "/partner-logos/PhalenLeadership.png"
+          },
+          {
+            "name": "alt",
+            "value": "Phalen Leadership Academies logo"
+          }
+        ],
+        "__type": "li.img"
+      }
     ]
   }
 }
