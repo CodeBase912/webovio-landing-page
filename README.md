@@ -3,20 +3,20 @@
 <h1 align="center">Webovio Landing Page</h1>
 
 <div align="center">
-   A landing page for a design agency built from a free Adobe XD design template.
+   A landing page for a design agency built from a free Sketch design template.
 </div>
 
-<!-- <div align="center">
+<div align="center">
   <h3>
-    <a href="https://interior-consultant-solution.netlify.app/">
-      Live Demo
+    <a href="https://webovio-agency.netlify.app/">
+      Live Demo (**Still under development)
     </a>
-    <span> | </span>
-    <a href="https://devchallenges.io/solutions/VRL9BZ9sRmehLdAHqVoX">
-      Design (Adobe XD)
-    </a>
+    <!-- <span> | </span>
+    <a href="">
+      Design (Sketch file)
+    </a> -->
   </h3>
-</div> -->
+</div>
 
 <!-- TABLE OF CONTENTS -->
 
@@ -45,10 +45,16 @@ Create a homepage following the given design. The page should be responsive. Ful
 
 #### User stories
 
-- As a user, I can see a page following the given design
-- As a user, I can see a collapsed navigation
-- As a user, when I select the hamburger menu, I can see the navigation
-- As a user, I can click on the slider image buttons on the hero section to see different images
+The following user stories need to be fulfilled.
+
+As a user:
+
+- I can see a page following the given design
+- I can see a collapsed navigation
+- When I select the hamburger menu, I can see the site's navigation
+- I can see an image slider in the hero section that automatically shows different images different images
+
+<b>NOTE (to self):</b> These make it easier to apply agile methodologies to your projects.
 
 ### My Solution
 
