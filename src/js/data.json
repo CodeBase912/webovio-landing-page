@@ -18,6 +18,14 @@
             "value": "/Slider_Image_1.png"
           },
           {
+            "name": "width",
+            "value": "100%"
+          },
+          {
+            "name": "height",
+            "value": "100%"
+          },
+          {
             "name": "alt",
             "value": "Slider Image 1"
           }
@@ -29,6 +37,14 @@
           {
             "name": "src",
             "value": "/Slider_Image_2.png"
+          },
+          {
+            "name": "width",
+            "value": "100%"
+          },
+          {
+            "name": "height",
+            "value": "100%"
           },
           {
             "name": "alt",
@@ -46,6 +62,14 @@
             "value": "/partner-logos/16_Andrew-Porter-Logo.png"
           },
           {
+            "name": "width",
+            "value": "156px"
+          },
+          {
+            "name": "height",
+            "value": "113px"
+          },
+          {
             "name": "alt",
             "value": "Andrew Porter logo"
           }
@@ -57,6 +81,14 @@
           {
             "name": "src",
             "value": "/partner-logos/17_Jalen-Rose-Leadership-Academy-Logo.png"
+          },
+          {
+            "name": "width",
+            "value": "156px"
+          },
+          {
+            "name": "height",
+            "value": "113px"
           },
           {
             "name": "alt",
@@ -72,6 +104,14 @@
             "value": "/partner-logos/Wal.png"
           },
           {
+            "name": "width",
+            "value": "156px"
+          },
+          {
+            "name": "height",
+            "value": "113px"
+          },
+          {
             "name": "alt",
             "value": "Walbridge logo"
           }
@@ -85,6 +125,14 @@
             "value": "/partner-logos/Ideal.png"
           },
           {
+            "name": "width",
+            "value": "156px"
+          },
+          {
+            "name": "height",
+            "value": "113px"
+          },
+          {
             "name": "alt",
             "value": "Ideal logo"
           }
@@ -96,6 +144,14 @@
           {
             "name": "src",
             "value": "/partner-logos/PhalenLeadership.png"
+          },
+          {
+            "name": "width",
+            "value": "156px"
+          },
+          {
+            "name": "height",
+            "value": "113px"
           },
           {
             "name": "alt",
