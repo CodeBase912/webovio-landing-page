@@ -49,38 +49,27 @@ fetch("http://127.0.0.1:5501/src/js/data.json")
             contentElements[i].dataset.contentId
           );
           console.log("ComponentName: ", componentName);
-          let attributes = {};
-          if (componentName === "ImgSlider") {
-            attributes = {
-              parent: [
-                {
-                  name: "class",
-                  value: "hero__img-slider__img",
-                },
-                {
-                  name: "data-img-index",
-                  // The image index should start at 1
-                  value: `${elementIndex + 1}`,
-                },
-              ],
-              child: element.attributes,
-            };
-          } else if (componentName === "clientLogos") {
-            attributes = {
-              parent: [
-                {
-                  name: "class",
-                  value: "hero__client-logos__img",
-                },
-                {
-                  name: "data-img-index",
-                  // The image index should start at 1
-                  value: `${elementIndex + 1}`,
-                },
-              ],
-              child: element.attributes,
-            };
-          }
+          // Define options for the imgList's image element class attribute value
+          const imgListClassOptions = {
+            ImgSlider: "hero__img-slider__img",
+            clientLogos: "hero__client-logos__img",
+          };
+
+          // Define element attributes
+          const attributes = {
+            parent: [
+              {
+                name: "class",
+                value: imgListClassOptions[componentName],
+              },
+              {
+                name: "data-img-index",
+                // The image index should start at 1
+                value: `${elementIndex + 1}`,
+              },
+            ],
+            child: element.attributes,
+          };
           let htmlTag = createElement(element.__type, attributes);
           console.log("htmlTag: ", htmlTag);
           // Append the htmlTag to the current contet element
