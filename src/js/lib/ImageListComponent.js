@@ -30,38 +30,43 @@ export default class ImageListComponent {
     let imgList = "";
     this.model.images.map((img) => {
       // Define img element attributes
-      let imgAttributes;
-      this.model.attributes
-        ? this.model.attributes.map((attribute) => {
+      let imgAttributes = "";
+      img?.attributes
+        ? img.attributes.map((attribute) => {
             imgAttributes += `${attribute.name}=${attribute.value} `;
           })
         : "";
 
       // Define li element attributes
-      let liAttributes;
-      this.model.liElementAttr
-        ? this.model.liElementAttr.map((attribute) => {
-            liAttributes += `${attribute.name}=${attribute.value} `;
+      let liAttributes = "";
+      img?.liElementAttr
+        ? img.liElementAttr.map((attribute) => {
+            if (attribute.name === "class") {
+              liAttributes += `${attribute.name}="skeleton-img ${attribute.value}" `;
+            } else {
+              liAttributes += `${attribute.name}=${attribute.value} `;
+            }
           })
         : "";
+      console.log("img: ", img);
 
       imgList += `
         <li ${liAttributes}>
-          <img src="${this.model.src}" alt="${this.model.alt}" ${imgAttributes}/>
+          <img src="${img.src}" alt="${img.altText}" ${imgAttributes}/>
         <li>
         `;
     });
 
     // Define ul element attributes
-    let ulAttributes;
+    let ulAttributes = "";
     this.model.ulElementAttr
       ? this.model.ulElementAttr.map((attribute) => {
-          ulElementAttr += `${attribute.name}=${attribute.value} `;
+          ulAttributes += `${attribute.name}=${attribute.value} `;
         })
       : "";
 
     return `
-      <ul ${ulElementAttr}>${imgList}</ul>
+      <ul ${ulAttributes}>${imgList}</ul>
     `;
   }
 }

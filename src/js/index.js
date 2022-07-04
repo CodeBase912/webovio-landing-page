@@ -7,6 +7,8 @@ import getObjectProps from "./utils/getObjectProps";
 import createElement from "./utils/createElement";
 import getComponentName from "./utils/getComponentName";
 import CardComponent from "./lib/CardComponent";
+import ImageListComponent from "./lib/ImageListComponent";
+import { images } from "./utils/imageListData";
 
 // -----------------------------------------------------------------------
 // FETCH PAGE DATA
@@ -52,7 +54,7 @@ fetch("http://127.0.0.1:5501/src/js/data.json")
           // Define options for the imgList's image element class attribute value
           const imgListClassOptions = {
             ImgSlider: "hero__img-slider__img",
-            clientLogos: "hero__client-logos__img",
+            imgDatas: "hero__client-logos__img",
           };
 
           // Define element attributes
@@ -92,4 +94,12 @@ fetch("http://127.0.0.1:5501/src/js/data.json")
       imgSliderIdentifier: "#hero-img-slider",
       dataAttributeIdentifier: "data-img-index",
     });
+
+    const ImageList__Component = new ImageListComponent({
+      ulElementAttr: [{ name: "class", value: "test" }],
+      images: images(data.heroSection.clientLogos),
+    });
+
+    console.log({ ImageList__Component });
+    console.log("ImageList__Component: ", ImageList__Component.template);
   });
