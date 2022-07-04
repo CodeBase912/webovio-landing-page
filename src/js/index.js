@@ -6,6 +6,7 @@ import ImageSilder from "./lib/ImageSlider.js";
 import getObjectProps from "./utils/getObjectProps";
 import createElement from "./utils/createElement";
 import getComponentName from "./utils/getComponentName";
+import CardComponent from "./lib/CardComponent";
 
 // -----------------------------------------------------------------------
 // FETCH PAGE DATA
@@ -85,6 +86,13 @@ fetch("http://127.0.0.1:5501/src/js/data.json")
           // Append the htmlTag to the current contet element
           contentElements[i].append(htmlTag);
         });
+      } else if (
+        contentElements[i].dataset.contentId === "aboutUsSection.statement"
+      ) {
+        console.log("Card DataContent: ", dataContent);
+        const statementCard = new CardComponent(dataContent);
+        console.log("statementCard: ", statementCard);
+        contentElements[i].innerHTML = statementCard.html;
       }
       contentElements[i].classList.remove("skeleton");
       contentElements[i].classList.remove("skeleton-cta");

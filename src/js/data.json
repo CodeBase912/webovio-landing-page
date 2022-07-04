@@ -161,5 +161,19 @@
         "__type": "li.img"
       }
     ]
+  },
+  "aboutUsSection": {
+    "statement": {
+      "header": {
+        "content": {
+          "string": "Strategy. Design Content. Technology Development"
+        }
+      },
+      "body": {
+        "content": {
+          "string": "There&#39;s no secret sauce, no wizard behind the curtain. What makes Webovio tick is an interdisciplinary team with a framework that fosters candid collaboration."
+        }
+      }
+    }
   }
 }
