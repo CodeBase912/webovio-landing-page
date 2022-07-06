@@ -1,34 +1,35 @@
 //@ts-check
+
+// ----------------------------------------------------------------------
+// TYPE DEFINITIONS
+// ----------------------------------------------------------------------
+
+/**
+ * HTML element attributes
+ * @typedef {Object} ElementAttributes
+ * @property {string} name  attribute name
+ * @property {string} value attribute name
+ */
+
+/**
+ * @typedef {Object} Image
+ * @property {ElementAttributes[] | undefined} liElementAttr  list tag element attributes
+ * @property {string} src  img tag src attributes
+ * @property {string} altText  img tag alt attributes
+ * @property {ElementAttributes[] | undefined} attributes  img tag attributes
+ */
+
+/**
+ * @typedef {Object} Model
+ * @property {ElementAttributes[] | undefined} ulElementAttr
+ * @property {Image[]} images
+ */
+
+// ----------------------------------------------------------------------
+// CLASS PROPERTY DEFINITIONS
+// ----------------------------------------------------------------------
+
 export default class ImageListComponent {
-  // ----------------------------------------------------------------------
-  // TYPE DEFINITIONS
-  // ----------------------------------------------------------------------
-
-  /**
-   * HTML element attributes
-   * @typedef {Object} ElementAttributes
-   * @property {string} name  attribute name
-   * @property {string} value attribute name
-   */
-
-  /**
-   * @typedef {Object} Image
-   * @property {ElementAttributes[] | undefined} liElementAttr  list tag element attributes
-   * @property {string} src  img tag src attributes
-   * @property {string} altText  img tag alt attributes
-   * @property {ElementAttributes[] | undefined} attributes  img tag attributes
-   */
-
-  /**
-   * @typedef {Object} Model
-   * @property {ElementAttributes[] | undefined} ulElementAttr
-   * @property {Image[]} images
-   */
-
-  // ----------------------------------------------------------------------
-  // CLASS PROPERTY DEFINITIONS
-  // ----------------------------------------------------------------------
-
   /**
    * the rendered image list HTML
    * @property

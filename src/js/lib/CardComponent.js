@@ -1,3 +1,54 @@
+//@ts-check
+
+// ---------------------------------------------------------------------
+// TYPE DEFINITIONS
+// ---------------------------------------------------------------------
+
+/**
+ * @typedef {Object} ImageDimensions
+ * @property {string} width
+ * @property {string} height
+ */
+
+/**
+ * @typedef {Object} Image
+ * @property {string} src  img tag src attributes
+ * @property {string} altText  img tag alt attributes
+ * @property {ImageDimensions} dimensions img tag dimensions
+ */
+
+/**
+ * @typedef {Object} UserCard
+ * @property {string} name
+ * @property {string} userInfo
+ * @property {Image} userImg
+ */
+
+/**
+ * @typedef {Object} Content
+ * @property {string | undefined} string
+ * @property {UserCard | undefined} userCard
+ */
+
+/**
+ * @typedef {Object} CardSection
+ * @property {string | undefined} id  card section element id
+ * @property {Content} content
+ * @property {import("./ImageListComponent.js").ElementAttributes[] | undefined} attributes
+ */
+
+/**
+ * @typedef {Object} Config
+ * @property {string | undefined} id
+ * @property {CardSection | undefined} header
+ * @property {CardSection} body
+ * @property {CardSection | undefined} footer
+ */
+
+// ---------------------------------------------------------------------
+// CLASS DEFINITION
+// ---------------------------------------------------------------------
+
 export default class CardComponent {
   /**
    * card element's id attribute value
@@ -11,7 +62,7 @@ export default class CardComponent {
    * the card header configuration
    * @property
    * @private
-   * @type {{id?: string, attributes?: {name: string, value: string}[], content: {string?: string, userCard?: {name: string, userInfo: string, userImg: {src: string, altText: string, dimensions?: {width: string, height: string}}}}}}
+   * @type {CardSection | undefined}
    */
   _header;
 
@@ -19,7 +70,7 @@ export default class CardComponent {
    * the card body configuration
    * @property
    * @private
-   * @type {{id?: string, attributes?: {name: string, value: string}[], content: {string?: string, userCard?: {name: string, userInfo: string, userImg: {src: string, altText: string, dimensions?: {width: string, height: string}}}}}}
+   * @type {CardSection}
    */
   _body;
 
@@ -27,7 +78,7 @@ export default class CardComponent {
    * the card footer configuration
    * @property
    * @private
-   * @type {{id?: string, attributes?: {name: string, value: string}[], content: {string?: string, userCard?: {name: string, userInfo: string, userImg: {src: string, altText: string, dimensions?: {width: string, height: string}}}}}}
+   * @type {CardSection | undefined}
    */
   _footer;
 
@@ -35,14 +86,14 @@ export default class CardComponent {
    * the rendered card HTML
    * @property
    * @public
-   * @type {HTMLDivElement}
+   * @type {string}
    */
   html;
 
   /**
    *
    *
-   * @param {{id?: string, header?: {id?: string, attributes?: {name: string, value: string}[], content: {string?: string, userCard?: {name: string, userInfo: string, userImg: {src: string, altText: string, dimensions?: {width: string, height: string}}}}}, body: {id?: string, attributes?: {name: string, value: string}[], content: {string?: string, userCard?: {name: string, userInfo: string, userImg: {src: string, altText: string, dimensions?: {width: string, height: string}}}}}, footer?: {id?: string, attributes?: {name: string, value: string}[], content: {string?: string, userCard?: {name: string, userInfo: string, userImg: {src: string, altText: string, dimensions?: {width: string, height: string}}}}}}} config
+   * @param {Config} config
    */
   constructor(config) {
     this.id = config?.id;
@@ -89,9 +140,9 @@ export default class CardComponent {
    * the card footer configuration
    * @method
    * @private
-   * @param {{id?: string, attributes?: {name: string, value: string}[], content: {string?: string, userCard?: {name: string, userInfo: string, userImg: {src: string, altText: string, dimensions?: {width: string, height: string}}}}}} sectionConfig
+   * @param {CardSection | undefined} sectionConfig
    * @param {string} section the card section to render
-   * @returns {HTMLDivElement}  html template of a card section
+   * @returns {string}  html template of a card section
    */
   _cardSectionTemplate = (section, sectionConfig) => {
     // If the sectionConfig is undefined return
