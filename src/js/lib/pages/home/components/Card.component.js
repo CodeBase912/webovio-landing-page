@@ -28,18 +28,19 @@
  * @typedef {Object} Content
  * @property {string | undefined} string
  * @property {UserCard | undefined} userCard
+ * @property {import("./ImageList.component.js").ElementAttributes[] | undefined} attributes
  */
 
 /**
  * @typedef {Object} CardSection
  * @property {string | undefined} id  card section element id
  * @property {Content} content
- * @property {import("./ImageListComponent.js").ElementAttributes[] | undefined} attributes
+ * @property {import("./ImageList.component.js").ElementAttributes[] | undefined} attributes
  */
 
 /**
  * @typedef {Object} Config
- * @property {string | undefined} id
+ * @property {string | undefined} appendTo
  * @property {CardSection | undefined} header
  * @property {CardSection} body
  * @property {CardSection | undefined} footer
@@ -54,9 +55,9 @@ export default class CardComponent {
    * card element's id attribute value
    * @property
    * @public
-   * @type {string | undefined}
+   * @type {string}
    */
-  id;
+  appendTo;
 
   /**
    * the card header configuration
@@ -96,13 +97,15 @@ export default class CardComponent {
    * @param {Config} config
    */
   constructor(config) {
-    this.id = config?.id;
+    this.appendTo = config?.appendTo ? config?.appendTo : "";
     this._header = config?.header;
     this._body = config.body;
     this._footer = config?.footer;
 
     // Generate render string
-    this.render();
+    if (this.appendTo) {
+      this._render();
+    }
   }
 
   // --------------------------------------------------------------------------
@@ -112,24 +115,26 @@ export default class CardComponent {
   /**
    * generates the card's html string to be rendered
    * @method
-   * @public
+   * @private
    */
-  render() {
+  _render() {
     const headerSection = this._cardSectionTemplate("header", this._header);
     const bodySection = this._cardSectionTemplate("body", this._body);
     const footerSection = this._cardSectionTemplate("footer", this._footer);
-    // Define element attribute values
-    const elementId = this.id ? `id="${this.id}"` : "";
 
     const cardTemplate = `
-      <div ${elementId} class="content-card">
+      <div class="content-card">
         ${headerSection && headerSection}
         ${bodySection}
         ${footerSection && footerSection}
       </div>
     `;
 
-    this.html = cardTemplate;
+    const parentElement = document.querySelector(this.appendTo);
+    if (parentElement) {
+      console.log("parentElement: ", parentElement);
+      parentElement.innerHTML = cardTemplate;
+    }
   }
 
   // --------------------------------------------------------------------------
@@ -169,8 +174,15 @@ export default class CardComponent {
     // Define contentStringElement
     let contentStringElement;
     if (sectionConfig?.content?.string) {
+      let contentTagAttributes = "";
+      sectionConfig.content?.attributes?.map((attribute) => {
+        if (attribute.name === "class") {
+          classes += ` ${attribute.value}`;
+        }
+        contentTagAttributes += `${attribute.name}='${attribute.value}'`;
+      });
       const headerTag = section === "header" ? "h2" : "p";
-      contentStringElement = `<${headerTag}>${sectionConfig?.content.string}</${headerTag}>`;
+      contentStringElement = `<${headerTag} ${contentTagAttributes}>${sectionConfig?.content.string}</${headerTag}>`;
     }
 
     // Define contentUserCardElement

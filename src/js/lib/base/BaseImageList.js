@@ -1,5 +1,7 @@
 //@ts-check
 
+import { assetsHost } from "../../config";
+
 // ----------------------------------------------------------------------
 // TYPE DEFINITIONS
 // ----------------------------------------------------------------------
@@ -26,10 +28,10 @@
  */
 
 // ----------------------------------------------------------------------
-// CLASS PROPERTY DEFINITIONS
+// CLASS DEFINITION
 // ----------------------------------------------------------------------
 
-export default class ImageListComponent {
+export default class BaseImageList {
   /**
    * the rendered image list HTML
    * @property
@@ -46,20 +48,22 @@ export default class ImageListComponent {
     this.model = model;
   }
 
+  init() {}
+
   initEvents() {}
 
   get template() {
-    return this._renderTemplate();
+    return this.renderTemplate();
   }
 
   /**
    * @returns {string} a HTML string of the component
    * @method
-   * @private
+   * @protected
    */
-  _renderTemplate() {
+  renderTemplate() {
     let imgList = "";
-    this.model.images.map((img) => {
+    this.model.images.map((img, imgIndex) => {
       // Define img element attributes
       let imgAttributes = "";
       img?.attributes
@@ -83,7 +87,7 @@ export default class ImageListComponent {
 
       imgList += `
         <li ${liAttributes}>
-          <img src="${img.src}" alt="${img.altText}" ${imgAttributes}/>
+          <img src="${assetsHost}${img.src}" alt="${img.altText}" data-img-index="${imgIndex}" ${imgAttributes}/>
         <li>
         `;
     });
@@ -97,7 +101,7 @@ export default class ImageListComponent {
       : "";
 
     return `
-      <ul ${ulAttributes}>${imgList}</ul>
+      <ul ${ulAttributes} data-slider-container>${imgList}</ul>
     `;
   }
 }

@@ -1,0 +1,137 @@
+{
+  "heroSection": {
+    "heroContent": {
+      "title": "A creative agency for redemptive brands",
+      "description": "Webovio is a leading strategic design firm that builds powerful digital solutions for startups and enterprises.",
+      "ctaButton": {
+        "text": "Get in touch",
+        "style": "primary",
+        "link": null,
+        "__type": "cta-btn"
+      }
+    },
+    "imgSlider": [
+      {
+        "attributes": [
+          {
+            "name": "width",
+            "value": "100%"
+          },
+          {
+            "name": "height",
+            "value": "100%"
+          }
+        ],
+        "src": "/Slider_Image_1.png",
+        "altText": "Slider Image 1",
+        "__type": "li.img"
+      },
+      {
+        "attributes": [
+          {
+            "name": "width",
+            "value": "100%"
+          },
+          {
+            "name": "height",
+            "value": "100%"
+          }
+        ],
+        "src": "/Slider_Image_2.png",
+        "altText": "Slider Image 2",
+        "__type": "li.img"
+      }
+    ],
+    "clientLogos": [
+      {
+        "attributes": [
+          {
+            "name": "width",
+            "value": "156px"
+          },
+          {
+            "name": "height",
+            "value": "113px"
+          }
+        ],
+        "src": "/partner-logos/16_Andrew-Porter-Logo.png",
+        "altText": "Andrew Porter logo",
+        "__type": "li.img"
+      },
+      {
+        "attributes": [
+          {
+            "name": "width",
+            "value": "156px"
+          },
+          {
+            "name": "height",
+            "value": "113px"
+          }
+        ],
+        "src": "/partner-logos/17_Jalen-Rose-Leadership-Academy-Logo.png",
+        "altText": "Jalen Rose Leadership Academy logo",
+        "__type": "li.img"
+      },
+      {
+        "attributes": [
+          {
+            "name": "width",
+            "value": "156px"
+          },
+          {
+            "name": "height",
+            "value": "113px"
+          }
+        ],
+        "src": "/partner-logos/Wal.png",
+        "altText": "Walbridge logo",
+        "__type": "li.img"
+      },
+      {
+        "attributes": [
+          {
+            "name": "width",
+            "value": "156px"
+          },
+          {
+            "name": "height",
+            "value": "113px"
+          }
+        ],
+        "src": "/partner-logos/Ideal.png",
+        "altText": "Ideal logo",
+        "__type": "li.img"
+      },
+      {
+        "attributes": [
+          {
+            "name": "width",
+            "value": "156px"
+          },
+          {
+            "name": "height",
+            "value": "113px"
+          }
+        ],
+        "src": "/partner-logos/PhalenLeadership.png",
+        "altText": "Phalen Leadership Academies logo",
+        "__type": "li.img"
+      }
+    ]
+  },
+  "aboutUsSection": {
+    "statement": {
+      "header": {
+        "content": {
+          "string": "Strategy. Design Content. Technology Development"
+        }
+      },
+      "body": {
+        "content": {
+          "string": "There&#39;s no secret sauce, no wizard behind the curtain. What makes Webovio tick is an interdisciplinary team with a framework that fosters candid collaboration."
+        }
+      }
+    }
+  }
+}

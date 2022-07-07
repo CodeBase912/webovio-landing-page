@@ -153,6 +153,8 @@ export default class ImageSilder {
    * handles sliding images into view
    * @param {string} direction  the direction of the change. Either "next" or
    *                            "previous"
+   * @method
+   * @private
    */
   _changeImg(direction) {
     const imageSlider = document.querySelector(this._imgSliderIdentifier);
@@ -205,7 +207,9 @@ export default class ImageSilder {
    * determines the distance the image slider should scroll to display the
    * given image index
    *
-   * @param {number} index  image index to scroll to
+   * @param {int} index  image index to scroll to
+   * @method
+   * @private
    */
   _scrollToDist(index) {
     if (this._currentIndex === index) return 0;

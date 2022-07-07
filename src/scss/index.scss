@@ -46,6 +46,10 @@ $laptop: 1000px;
   flex-direction: column;
   align-items: flex-start;
 
+  & div {
+    width: 100%;
+  }
+
   @media screen and (min-width: $laptop) {
     & {
       padding: 0 60px;

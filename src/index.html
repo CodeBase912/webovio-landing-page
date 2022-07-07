@@ -438,6 +438,10 @@
         animation: skeleton-loading 1s linear infinite alternate;
       }
 
+      .skeleton__card__header {
+        font-size: 1.2em;
+      }
+
       @keyframes skeleton-loading {
         0% {
           background-color: rgba(68, 68, 68, 0.9);
@@ -536,7 +540,7 @@
         <section class="hero">
           <!-- Hero Content -->
           <div class="hero__content-container">
-            <div class="hero__content">
+            <div id="hero-content" class="hero__content">
               <h1
                 class="hero__content__title skeleton"
                 data-content-id="heroSection.heroContent.title"
@@ -564,13 +568,15 @@
           </div>
 
           <!-- Hero Client Logos -->
-          <div class="hero__client-logos">
+          <div id="hero-client-logos" class="hero__client-logos">
             <ul
               class="hero__client-logos__container"
               data-content-id="heroSection.clientLogos"
             ></ul>
           </div>
         </section>
+
+        <div data-component="HomePageComponent"></div>
 
         <!-- About Us Section -->
         <section class="about-us">
@@ -810,7 +816,7 @@
     </div>
 
     <!-- Critical (App Shell) JS Scripts -->
-    <script>
+    <script defer>
       /**
        * toggles the navBar
        * @param {string} elementIdentifier  the identifier of an element. Can
