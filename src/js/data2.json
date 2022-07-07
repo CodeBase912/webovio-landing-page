@@ -1,14 +1,27 @@
 {
   "heroSection": {
     "heroContent": {
-      "title": "A creative agency for redemptive brands",
-      "description": "Webovio is a leading strategic design firm that builds powerful digital solutions for startups and enterprises.",
-      "ctaButton": {
-        "text": "Get in touch",
-        "style": "primary",
-        "link": null,
-        "__type": "cta-btn"
-      }
+      "title": {
+        "content": {
+          "string": "A creative agency for redemptive brands",
+          "__type": "string"
+        }
+      },
+      "description": {
+        "content": {
+          "string": "Webovio is a leading strategic design firm that builds powerful digital solutions for startups and enterprises.",
+          "__type": "string"
+        }
+      },
+      "footer": {
+        "content": {
+          "text": "Get in touch",
+          "style": "primary",
+          "link": null,
+          "__type": "cta-btn"
+        }
+      },
+      "__type": "content-card"
     },
     "imgSlider": [
       {
@@ -122,16 +135,27 @@
   },
   "aboutUsSection": {
     "statement": {
-      "header": {
+      "title": {
         "content": {
-          "string": "Strategy. Design Content. Technology Development"
+          "string": "Strategy. Design Content. Technology Development",
+          "__type": "string"
         }
       },
-      "body": {
+      "description": {
         "content": {
-          "string": "There&#39;s no secret sauce, no wizard behind the curtain. What makes Webovio tick is an interdisciplinary team with a framework that fosters candid collaboration."
+          "string": "There&#39;s no secret sauce, no wizard behind the curtain. What makes Webovio tick is an interdisciplinary team with a framework that fosters candid collaboration.",
+          "__type": "string"
         }
-      }
+      },
+      "footer": {
+        "content": {
+          "text": "Learn more about us",
+          "style": "secondary",
+          "link": null,
+          "__type": "cta-btn"
+        }
+      },
+      "__type": "content-card"
     }
   }
 }

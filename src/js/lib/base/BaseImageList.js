@@ -10,7 +10,7 @@ import { assetsHost } from "../../config";
  * HTML element attributes
  * @typedef {Object} ElementAttributes
  * @property {string} name  attribute name
- * @property {string} value attribute name
+ * @property {string} value attribute value
  */
 
 /**

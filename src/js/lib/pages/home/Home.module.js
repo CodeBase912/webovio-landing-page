@@ -155,6 +155,34 @@ export default class HomePage {
       },
     });
 
+    // ---------------------------------------------------------------------
+    // Init HeroContent Component
+    // ---------------------------------------------------------------------
+    const StatementCard__Component = new CardComponent({
+      header: {
+        content: {
+          string: this.apiData.heroSection.heroContent.title,
+          attributes: [{ name: "class", value: "hero__content__title" }],
+        },
+      },
+      body: {
+        content: {
+          string: this.apiData.heroSection.heroContent.description,
+          attributes: [{ name: "class", value: "hero__content__description" }],
+        },
+      },
+      footer: {
+        content: {
+          string: `
+            <button class="hero__content__cta-btn">
+              ${this.apiData.heroSection.heroContent.ctaButton.text}
+            </button>
+          `,
+          attributes: [{ name: "class", value: "hero__content__cta" }],
+        },
+      },
+    });
+
     console.log(`\n\nSlider:>>>> `, Slider__Component);
   }
 
@@ -163,6 +191,7 @@ export default class HomePage {
   }
 
   async initEvents() {
+    // Init component events
     this.components.map((component) => {
       component.initEvents();
     });
