@@ -39,7 +39,16 @@ export default class BaseButton {
 
   initEvent() {}
 
-  _renderTemplate() {
+  get template() {
+    return this.renderTemplate();
+  }
+
+  /**
+   * @returns {string} a HTML string of the component
+   * @method
+   * @protected
+   */
+  renderTemplate() {
     // Log an error in the console if there is no id property
     // in the model
     if (!this.model.id) {
@@ -61,7 +70,13 @@ export default class BaseButton {
     // Define the button class attribute
     let classAttr = "";
     if (this.model?.className) {
-      classAttr += `class=${this.model.className}`;
+      classAttr += `class="${this.model.className}"`;
+    }
+
+    // Define the button href attribute
+    let hrefAttr = "";
+    if (this.model?.link) {
+      hrefAttr += `href="${this.model.link}"`;
     }
 
     // Define the button attributes
@@ -72,9 +87,11 @@ export default class BaseButton {
       });
 
     return `
-    <button ${idAttr} ${classAttr} ${attributes}>
-      ${text}
-    </button>
+    ${hrefAttr && `<a ${hrefAttr}>`}
+      <button ${idAttr} ${classAttr} ${attributes}>
+        ${text}
+      </button>
+    ${hrefAttr && `</a>`}
     `;
   }
 }
