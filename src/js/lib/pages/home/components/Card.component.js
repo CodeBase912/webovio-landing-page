@@ -92,6 +92,12 @@ export default class CardComponent {
   html;
 
   /**
+   * @property
+   * @type {any[]}
+   */
+  components = [];
+
+  /**
    *
    *
    * @param {Config} config
@@ -104,7 +110,10 @@ export default class CardComponent {
 
     // Generate render string
     if (this.appendTo) {
-      this._render();
+      const parentElement = document.querySelector(this.appendTo);
+      if (parentElement) {
+        parentElement.innerHTML = this.renderTemplate();
+      }
     }
   }
 
@@ -112,12 +121,16 @@ export default class CardComponent {
   // METHODS
   // --------------------------------------------------------------------------
 
+  get template() {
+    return this.renderTemplate();
+  }
+
   /**
-   * generates the card's html string to be rendered
+   * @returns {string} a HTML string of the component
    * @method
-   * @private
+   * @protected
    */
-  _render() {
+  renderTemplate() {
     const headerSection = this._cardSectionTemplate("header", this._header);
     const bodySection = this._cardSectionTemplate("body", this._body);
     const footerSection = this._cardSectionTemplate("footer", this._footer);
@@ -130,11 +143,7 @@ export default class CardComponent {
       </div>
     `;
 
-    const parentElement = document.querySelector(this.appendTo);
-    if (parentElement) {
-      console.log("parentElement: ", parentElement);
-      parentElement.innerHTML = cardTemplate;
-    }
+    return cardTemplate;
   }
 
   // --------------------------------------------------------------------------
