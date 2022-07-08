@@ -92,12 +92,6 @@ export default class CardComponent {
   html;
 
   /**
-   * @property
-   * @type {any[]}
-   */
-  components = [];
-
-  /**
    *
    *
    * @param {Config} config
