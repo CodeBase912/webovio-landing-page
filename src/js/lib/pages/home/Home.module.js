@@ -34,23 +34,87 @@ import ImageSliderComponent from "./components/ImageSlider.component";
  * @property {string} __type
  */
 
+// "title": {
+//         "content": {
+//           "string": "A creative agency for redemptive brands",
+//           "__type": "string"
+//         }
+//       }
+/**
+ * @typedef {import("./components/Card.component").UserCard} UserCard
+ */
+
+/**
+ * @typedef {import("../../base/BaseButton.component").ButtonModel} CtaBtn
+ */
+
+/**
+ * @typedef {Object} APIContent
+ * @property {string[] | undefined} string
+ * @property {UserCard | undefined} userCard
+ * @property {CtaBtn | undefined} ctaBtn
+ * @property {"string" | "userCard" | "ctaBtn"} __type
+ */
+
+/**
+ * @typedef {Object} ContentCard
+ * @property {APIContent | undefined} header
+ * @property {APIContent} body
+ * @property {APIContent | undefined} footer
+ */
+
 /**
  * @typedef {Object} HeroContent
- * @property {string} title
+ * @property {APIContent} content
  * @property {string} description
  * @property {CallToAction} ctaButton
  */
 
 /**
  * @typedef {Object} HeroSection
- * @property {HeroContent} heroContent
+ * @property {ContentCard} heroContent
  * @property {Image[]} imgSlider
  * @property {Image[]} clientLogos
  */
 
 /**
+ * @typedef {Object} AboutUsSection
+ * @property {ContentCard} statement
+ * @property {ContentCard} msgFromCEO
+ */
+
+/**
+ * @typedef {Object} CaseStudy
+ * @property {Image} caseImg
+ * @property {ContentCard} caseDetails
+ * @property {ContentCard} msgFromClient
+ */
+
+/**
+ * @typedef {Object} SectionTitle
+ * @property {string} title
+ * @property {string} description
+ */
+
+/**
+ * @typedef {Object} ProjectsSection
+ * @property {SectionTitle} sectionHeader
+ * @property {CaseStudy[]} caseStudies
+ */
+
+/**
+ * @typedef {Object} OurServicesSection
+ * @property {SectionTitle} sectionHeader
+ * @property {ContentCard[]} ourServices
+ * @property {ContentCard} letsGetStarted
+ */
+
+/**
  * @typedef {Object} APIResponse
  * @property {HeroSection} heroSection
+ * @property {AboutUsSection} aboutUsSection
+ * @property {ProjectsSection} projectsSection
+ * @property {OurServicesSection} ourServicesSection
  */
 
 // ---------------------------------------------------------------------

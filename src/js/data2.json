@@ -1,27 +1,23 @@
 {
   "heroSection": {
     "heroContent": {
-      "title": {
-        "content": {
-          "string": "A creative agency for redemptive brands",
-          "__type": "string"
-        }
+      "header": {
+        "string": "A creative agency for redemptive brands",
+        "__type": "string"
       },
-      "description": {
-        "content": {
-          "string": "Webovio is a leading strategic design firm that builds powerful digital solutions for startups and enterprises.",
-          "__type": "string"
-        }
+      "body": {
+        "string": "Webovio is a leading strategic design firm that builds powerful digital solutions for startups and enterprises.",
+        "__type": "string"
       },
       "footer": {
-        "content": {
+        "ctaBtn": {
           "text": "Get in touch",
           "style": "primary",
-          "link": null,
-          "__type": "cta-btn"
-        }
+          "link": null
+        },
+        "__type": "ctaBtn"
       },
-      "__type": "content-card"
+      "__type": "contentCard"
     },
     "imgSlider": [
       {
@@ -135,27 +131,75 @@
   },
   "aboutUsSection": {
     "statement": {
-      "title": {
-        "content": {
-          "string": "Strategy. Design Content. Technology Development",
-          "__type": "string"
-        }
+      "header": {
+        "string": "Strategy. Design Content. Technology Development",
+        "__type": "string"
       },
-      "description": {
-        "content": {
-          "string": "There&#39;s no secret sauce, no wizard behind the curtain. What makes Webovio tick is an interdisciplinary team with a framework that fosters candid collaboration.",
-          "__type": "string"
-        }
+      "body": {
+        "string": "There&#39;s no secret sauce, no wizard behind the curtain. What makes Webovio tick is an interdisciplinary team with a framework that fosters candid collaboration.",
+        "__type": "string"
       },
       "footer": {
-        "content": {
+        "ctaBtn": {
           "text": "Learn more about us",
           "style": "secondary",
-          "link": null,
-          "__type": "cta-btn"
-        }
+          "link": null
+        },
+        "__type": "ctaBtn"
       },
-      "__type": "content-card"
+      "__type": "contentCard"
+    },
+    "msgFromCEO": {
+      "body": {
+        "string": "With More than 10 Years of Knowledge and Expertise we Design and Code Websites and Apps, We Build Brands and Help Them Succeed",
+        "__type": "string"
+      },
+      "footer": {
+        "userCard": {
+          "name": "Genevieve Rodriquez",
+          "userInfo": "Founder & CEO, Webovio",
+          "userImg": {
+            "src": "/user-profiles/Genevieve-Rodriquez.png",
+            "altText": "Genevieve Rodriquez",
+            "dimensions": {
+              "width": "90px",
+              "height": "90px"
+            }
+          }
+        },
+        "__type": "userCard"
+      },
+      "__type": "contentCard"
     }
+  },
+  "projectsSection": {
+    "sectionHeader": {
+      "title": "We Have Some Awesome Projects",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    },
+    "caseStudies": [
+      {
+        "caseImg": {
+          "src": "/Image_1.png",
+          "altText": "Image_1",
+          "attributes": [
+            {
+              "width": "735px",
+              "height": "550px"
+            }
+          ]
+        },
+        "caseDetails": {
+          "header": {
+            "string": "The wall new Balenciaga.com",
+            "__type": "string"
+          },
+          "body": {
+            "string": "The wall new Balenciaga.com",
+            "__type": "string"
+          }
+        }
+      }
+    ]
   }
 }
