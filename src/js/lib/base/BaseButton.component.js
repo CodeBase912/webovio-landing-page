@@ -13,7 +13,7 @@
  * @property {string} text
  * @property {string | undefined} link
  * @property {string | undefined} className
- * @property {ElementAttributes[] | undefined} attibutes
+ * @property {ElementAttributes[] | undefined} attributes
  */
 
 // ----------------------------------------------------------------------
@@ -81,8 +81,8 @@ export default class BaseButton {
 
     // Define the button attributes
     let attributes = "";
-    this.model?.attibutes &&
-      this.model?.attibutes.map((attribute) => {
+    this.model?.attributes &&
+      this.model?.attributes.map((attribute) => {
         attributes += `${attribute.name}=${attribute.value}`;
       });
 
