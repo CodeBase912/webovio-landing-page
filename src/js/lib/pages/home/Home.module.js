@@ -1,3 +1,4 @@
+import ButtonComponent from "./components/Button.component";
 import CardComponent from "./components/Card.component";
 import ImageListComponent from "./components/ImageList.component";
 import ImageSliderComponent from "./components/ImageSlider.component";
@@ -193,27 +194,41 @@ export default class HomePage {
     // ---------------------------------------------------------------------
     // Init HeroContent Component
     // ---------------------------------------------------------------------
+
+    const HeroContent__Cta_Btn__Component = new ButtonComponent({
+      appendTo: "",
+      model: {
+        id: "hero-content-cta",
+        ...this.apiData.heroSection.heroContent.footer[
+          this.apiData.heroSection.heroContent.footer.__type
+        ],
+        attributes: [{ name: "class", value: "hero__content__cta-btn" }],
+      },
+    });
+
     const HeroContent__Component = new CardComponent({
       appendTo: "#hero-content",
       header: {
         content: {
-          string: this.apiData.heroSection.heroContent.title,
+          string:
+            this.apiData.heroSection.heroContent.header[
+              this.apiData.heroSection.heroContent.body.__type
+            ],
           attributes: [{ name: "class", value: "hero__content__title" }],
         },
       },
       body: {
         content: {
-          string: this.apiData.heroSection.heroContent.description,
+          string:
+            this.apiData.heroSection.heroContent.body[
+              this.apiData.heroSection.heroContent.body.__type
+            ],
           attributes: [{ name: "class", value: "hero__content__description" }],
         },
       },
       footer: {
         content: {
-          string: `
-            <button class="hero__content__cta-btn">
-              ${this.apiData.heroSection.heroContent.ctaButton.text}
-            </button>
-          `,
+          string: [HeroContent__Cta_Btn__Component.template],
           attributes: [{ name: "class", value: "hero__content__cta" }],
         },
       },
@@ -222,26 +237,40 @@ export default class HomePage {
     // ---------------------------------------------------------------------
     // Init HeroContent Component
     // ---------------------------------------------------------------------
+
+    const StatementCard__Cta_Btn__Component = new ButtonComponent({
+      appendTo: "",
+      model: {
+        id: "statement-card-cta",
+        ...this.apiData.aboutUsSection.statement.footer[
+          this.apiData.aboutUsSection.statement.footer.__type
+        ],
+        attributes: [{ name: "class", value: "" }],
+      },
+    });
+
     const StatementCard__Component = new CardComponent({
       header: {
         content: {
-          string: this.apiData.heroSection.heroContent.title,
+          string:
+            this.apiData.aboutUsSection.statement.header[
+              this.apiData.aboutUsSection.statement.header.__type
+            ],
           attributes: [{ name: "class", value: "hero__content__title" }],
         },
       },
       body: {
         content: {
-          string: this.apiData.heroSection.heroContent.description,
+          string:
+            this.apiData.aboutUsSection.statement.body[
+              this.apiData.aboutUsSection.statement.body.__type
+            ],
           attributes: [{ name: "class", value: "hero__content__description" }],
         },
       },
       footer: {
         content: {
-          string: `
-            <button class="hero__content__cta-btn">
-              ${this.apiData.heroSection.heroContent.ctaButton.text}
-            </button>
-          `,
+          string: StatementCard__Cta_Btn__Component.template,
           attributes: [{ name: "class", value: "hero__content__cta" }],
         },
       },

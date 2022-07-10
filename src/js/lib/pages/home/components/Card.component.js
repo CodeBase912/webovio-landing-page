@@ -26,7 +26,7 @@
 
 /**
  * @typedef {Object} Content
- * @property {string | undefined} string
+ * @property {string[] | undefined} string
  * @property {UserCard | undefined} userCard
  * @property {import("./ImageList.component.js").ElementAttributes[] | undefined} attributes
  */
@@ -175,7 +175,7 @@ export default class CardComponent {
     }
 
     // Define contentStringElement
-    let contentStringElement;
+    let contentStringElement = "";
     if (sectionConfig?.content?.string) {
       let contentTagAttributes = "";
       sectionConfig.content?.attributes?.map((attribute) => {
@@ -185,7 +185,9 @@ export default class CardComponent {
         contentTagAttributes += `${attribute.name}='${attribute.value}'`;
       });
       const headerTag = section === "header" ? "h2" : "p";
-      contentStringElement = `<${headerTag} ${contentTagAttributes}>${sectionConfig?.content.string}</${headerTag}>`;
+      sectionConfig.content.string.map((string) => {
+        contentStringElement += `<${headerTag} ${contentTagAttributes}>${string}</${headerTag}>`;
+      });
     }
 
     // Define contentUserCardElement

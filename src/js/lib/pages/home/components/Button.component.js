@@ -14,7 +14,7 @@ import BaseButton from "../../../base/BaseButton.component";
 
 /**
  * @typedef {Object} Config
- * @property {string} appednTo
+ * @property {string} appendTo
  * @property {import("../../../base/BaseButton.component").ButtonModel} model
  * @property {ButtonOptions | undefined} options
  */

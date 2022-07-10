@@ -2,11 +2,13 @@
   "heroSection": {
     "heroContent": {
       "header": {
-        "string": "A creative agency for redemptive brands",
+        "string": ["A creative agency for redemptive brands"],
         "__type": "string"
       },
       "body": {
-        "string": "Webovio is a leading strategic design firm that builds powerful digital solutions for startups and enterprises.",
+        "string": [
+          "Webovio is a leading strategic design firm that builds powerful digital solutions for startups and enterprises."
+        ],
         "__type": "string"
       },
       "footer": {
