@@ -12,7 +12,7 @@
       "footer": {
         "ctaBtn": {
           "text": "Get in touch",
-          "style": "primary",
+          "style": "contained",
           "link": null
         },
         "__type": "ctaBtn"
@@ -191,15 +191,266 @@
         },
         "caseDetails": {
           "header": {
-            "string": "The wall new Balenciaga.com",
+            "string": ["The wall new Balenciaga.com"],
             "__type": "string"
           },
           "body": {
-            "string": "The wall new Balenciaga.com",
+            "string": [
+              "This article is floated online with an aim to help you find the best dvd printing solution.",
+              "Dvd printing is an important feature used by large and small DVD production houses to print information on DVDs."
+            ],
             "__type": "string"
-          }
+          },
+          "footer": {
+            "ctaBtn": {
+              "text": "See Case Study",
+              "link": null
+            },
+            "__type": "ctaBtn"
+          },
+          "__type": "contentCard"
+        },
+        "msgFromClient": {
+          "body": {
+            "string": [
+              "In my history of working with trade show vendors, I can honestly say that there is not one company that I've ever worked with that has better service than Exhibit Systems."
+            ],
+            "__type": "string"
+          },
+          "footer": {
+            "userCard": {
+              "name": "Angel Armstrong",
+              "userInfo": "Founder & CEO, Google",
+              "userImg": {
+                "src": "/user-profiles/Angel-Armstrong.png",
+                "altText": "Angel Armstrong",
+                "dimensions": {
+                  "width": "90px",
+                  "height": "90px"
+                }
+              }
+            },
+            "__type": "userCard"
+          },
+          "__type": "contentCard"
+        }
+      },
+      {
+        "caseImg": {
+          "src": "/Image_2.png",
+          "altText": "Image_2",
+          "attributes": [
+            {
+              "width": "735px",
+              "height": "550px"
+            }
+          ]
+        },
+        "caseDetails": {
+          "header": {
+            "string": ["Is this the future of 3D model?"],
+            "__type": "string"
+          },
+          "body": {
+            "string": [
+              "While it was just a TV show, that little speech at the beginning of the original Star Trek show really did do a good job of capturing our feelings about space.",
+              "It is those feelings that drive our love of astronomy and our desire to learn more and more about it."
+            ],
+            "__type": "string"
+          },
+          "footer": {
+            "ctaBtn": {
+              "text": "See Case Study",
+              "link": null
+            },
+            "__type": "ctaBtn"
+          },
+          "__type": "contentCard"
+        },
+        "msgFromClient": {
+          "body": {
+            "string": [
+              "I know they are going to be honest with me. I am not going to get a subpar product; I know it is going to be good. That is the number one advantage of working with Exhibit Systems."
+            ],
+            "__type": "string"
+          },
+          "footer": {
+            "userCard": {
+              "name": "Lina Hart",
+              "userInfo": "Founder & CEO, Jico",
+              "userImg": {
+                "src": "/user-profiles/Lina-Hart.png",
+                "altText": "Lina Hart",
+                "dimensions": {
+                  "width": "90px",
+                  "height": "90px"
+                }
+              }
+            },
+            "__type": "userCard"
+          },
+          "__type": "contentCard"
+        }
+      },
+      {
+        "caseImg": {
+          "src": "/Slider_Image_2.png",
+          "altText": "Image_3",
+          "attributes": [
+            {
+              "width": "735px",
+              "height": "550px"
+            }
+          ]
+        },
+        "caseDetails": {
+          "header": {
+            "string": [" Is this the future of Online Booking"],
+            "__type": "string"
+          },
+          "body": {
+            "string": [
+              "You should be able to find several indispensable facts about motivation in the following paragraphs.",
+              "If there’s at least one fact you didn’t know before, imagine the difference it might make."
+            ],
+            "__type": "string"
+          },
+          "footer": {
+            "ctaBtn": {
+              "text": "See Case Study",
+              "link": null
+            },
+            "__type": "ctaBtn"
+          },
+          "__type": "contentCard"
+        },
+        "msgFromClient": {
+          "body": {
+            "string": [
+              "Exhibit Systems is not a provider. They are not a supplier. They are a partner with expertise in making trade shows effective."
+            ],
+            "__type": "string"
+          },
+          "footer": {
+            "userCard": {
+              "name": "Eunice Oliver",
+              "userInfo": "Founder & CEO, Zeem",
+              "userImg": {
+                "src": "/user-profiles/Eunice-Oliver.png",
+                "altText": "Eunice Oliver",
+                "dimensions": {
+                  "width": "90px",
+                  "height": "90px"
+                }
+              }
+            },
+            "__type": "userCard"
+          },
+          "__type": "contentCard"
         }
       }
     ]
+  },
+  "ourServicesSection": {
+    "sectionHeader": {
+      "title": "Deation & Evaluation - Best Way to Kick off Your Product Idea",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+    },
+    "ourServices": [
+      {
+        "header": {
+          "string": ["Product Design Sprint"],
+          "__type": "string"
+        },
+        "body": {
+          "string": [
+            "A five-day workshop that will help you answer crucial business questions"
+          ],
+          "__type": "string"
+        },
+        "footer": {
+          "ctaBtn": {
+            "text": "Read More",
+            "link": null
+          },
+          "__type": "ctaBtn"
+        },
+        "__type": "contentCard"
+      },
+      {
+        "header": {
+          "string": ["Scoping Session"],
+          "__type": "string"
+        },
+        "body": {
+          "string": [
+            "A workshop aimed at shaping your business idea, answering questions regarding project planning"
+          ],
+          "__type": "string"
+        },
+        "footer": {
+          "ctaBtn": {
+            "text": "Read More",
+            "link": null
+          },
+          "__type": "ctaBtn"
+        },
+        "__type": "contentCard"
+      },
+      {
+        "header": {
+          "string": ["UX Review"],
+          "__type": "string"
+        },
+        "body": {
+          "string": [
+            "An evaluation which will help you radically improve your product."
+          ],
+          "__type": "string"
+        },
+        "footer": {
+          "ctaBtn": {
+            "text": "Read More",
+            "link": null
+          },
+          "__type": "ctaBtn"
+        },
+        "__type": "contentCard"
+      },
+      {
+        "header": {
+          "string": ["Code Review"],
+          "__type": "string"
+        },
+        "body": {
+          "string": [
+            "Do you know what one of the key secrets of success is what makes people successful in business"
+          ],
+          "__type": "string"
+        },
+        "footer": {
+          "ctaBtn": {
+            "text": "Read More",
+            "link": null
+          },
+          "__type": "ctaBtn"
+        },
+        "__type": "contentCard"
+      }
+    ],
+    "letsGetStarted": {
+      "header": {
+        "string": ["Let’s make something amazing together."],
+        "__type": "string"
+      },
+      "body": {
+        "ctaBtn": {
+          "text": "LET'S GET STARTED",
+          "link": null,
+          "__type": "ctaBtn"
+        }
+      },
+      "__type": "contentCard"
+    }
   }
 }
