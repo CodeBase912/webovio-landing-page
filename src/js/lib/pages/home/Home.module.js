@@ -345,15 +345,11 @@ export default class HomePage {
     this.addComponent = CaseStudiesSection__Component;
 
     return `
+      <!-- About Us Section -->
       ${AboutUsSection__Component.template}
 
-      ${CaseStudiesSection__Component.template}
-
       <!-- Case Studies Section -->
-      <section class="case-studies">
-        <div class="case-studies__intro"></div>
-        <div class="case-studies__container"></div>
-      </section>
+      ${CaseStudiesSection__Component.template}
 
       <!-- Our Services Section -->
       <section class="our-services">
