@@ -1,6 +1,7 @@
 import AboutUsSection from "./components/AboutUsSection.component";
 import ButtonComponent from "./components/Button.component";
 import CardComponent from "./components/Card.component";
+import CaseStudiesSection from "./components/CaseStudiesSection.component";
 import ImageListComponent from "./components/ImageList.component";
 import ImageSliderComponent from "./components/ImageSlider.component";
 
@@ -332,8 +333,21 @@ export default class HomePage {
     const AboutUsSection__Component = new AboutUsSection({
       model: this.apiData,
     });
+    // Add component to child components array
+    // TODO: there's some weird bug when we add the AboutUsSection__Component
+    //       to the child components arry. INVESTIGATE!!
+    // this.addComponent = AboutUsSection__Component;
+
+    const CaseStudiesSection__Component = new CaseStudiesSection({
+      model: this.apiData,
+    });
+    // Add component to child components array
+    this.addComponent = CaseStudiesSection__Component;
+
     return `
       ${AboutUsSection__Component.template}
+
+      ${CaseStudiesSection__Component.template}
 
       <!-- Case Studies Section -->
       <section class="case-studies">

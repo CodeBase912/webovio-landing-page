@@ -28,7 +28,7 @@ export default class AboutUsSection extends BaseSection {
    * @method
    * @public
    */
-  async initEvents() {
+  initEvents() {
     // Initialize child component events
     this.components.map((component) => {
       component.initEvents();

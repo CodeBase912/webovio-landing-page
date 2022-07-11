@@ -123,11 +123,7 @@ export default class BaseSection {
    */
   async initComponents() {}
 
-  /**
-   * @method
-   * @public
-   */
-  async initEvents() {}
+  initEvents() {}
 
   get template() {
     return this.renderTemplate();
