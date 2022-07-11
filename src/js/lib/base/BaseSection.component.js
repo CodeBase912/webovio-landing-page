@@ -126,12 +126,7 @@ export default class BaseSection {
    * @method
    * @public
    */
-  async initEvents() {
-    // Initialize child component events
-    this.components.map((component) => {
-      component.initEvents();
-    });
-  }
+  async initEvents() {}
 
   get template() {
     return renderTemplate();

@@ -24,9 +24,14 @@ export default class AboutUsSection extends BaseSection {
 
   /**
    * @method
-   * @protected
+   * @public
    */
-  async initComponents() {}
+  async initEvents() {
+    // Initialize child component events
+    this.components.map((component) => {
+      component.initEvents();
+    });
+  }
 
   /**
    * @returns {string} a HTML string of the component
