@@ -116,22 +116,23 @@ export default class CaseStudy extends BaseSection {
     return `
       <div class="case-studies__study">
 
-        <!-- Case Study Image -->
-        <div class="case-studies__study__img">
-          <img src="${assetsHost}${this.model.caseImg.src}" alt="${this.model.caseImg.altText}" ${imgTagAttributes} />
-        </div>
-
         <!-- Case Study Details Content Card -->
         <div class="case-studies__study__details-card">
           <!-- CardComponent goes here -->
           ${DetailsContentCard__Component.template}
         </div>
-          
-        <!-- Case Study Message From Client Content Card -->
-        <div class="case-studies__study__msgFromClient-card">
-          <!-- CardComponent goes here -->
-          ${MsgFromClientCard__Component.template}
+
+        <!-- Case Study Image -->
+        <div class="case-studies__study__img">
+          <img src="${assetsHost}${this.model.caseImg.src}" alt="${this.model.caseImg.altText}" ${imgTagAttributes} />
+           
+          <!-- Case Study Message From Client Content Card -->
+          <div class="case-studies__study__msgFromClient-card">
+            <!-- CardComponent goes here -->
+            ${MsgFromClientCard__Component.template}
+          </div>
         </div>
+         
       </div>
     `;
   }
