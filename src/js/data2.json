@@ -186,8 +186,12 @@
           "altText": "Image_1",
           "attributes": [
             {
-              "width": "735px",
-              "height": "550px"
+              "name": "width",
+              "value": "735px"
+            },
+            {
+              "name": "height",
+              "value": "550px"
             }
           ]
         },
@@ -243,8 +247,12 @@
           "altText": "Image_2",
           "attributes": [
             {
-              "width": "735px",
-              "height": "550px"
+              "name": "width",
+              "value": "735px"
+            },
+            {
+              "name": "height",
+              "value": "550px"
             }
           ]
         },
@@ -300,8 +308,12 @@
           "altText": "Image_3",
           "attributes": [
             {
-              "width": "735px",
-              "height": "550px"
+              "name": "width",
+              "value": "735px"
+            },
+            {
+              "name": "height",
+              "value": "550px"
             }
           ]
         },

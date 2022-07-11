@@ -1,5 +1,6 @@
 import BaseSection from "../../../base/BaseSection.component";
 import CardComponent from "./Card.component";
+import CaseStudy from "./CaseStudy.component";
 
 // ----------------------------------------------------------------------
 // TYPES DEFINITION
@@ -54,12 +55,26 @@ export default class CaseStudiesSection extends BaseSection {
     // Add component to child components array
     this.addComponent = SectionHeader__Component;
 
+    let CaseStudyListRender = "";
+    this.model.projectsSection.caseStudies.map((caseStudy, index) => {
+      const CaseStudy_Component = new CaseStudy({
+        id: `"caseStudy-${index + 1}"`,
+        model: caseStudy,
+      });
+      // Add component to child components array
+      this.addComponent = CaseStudy_Component;
+
+      CaseStudyListRender += `<li>${CaseStudy_Component.template}</li>`;
+    });
+
     return `
       <section class="case-studies">
         <div class="case-studies__header">
           ${SectionHeader__Component.template}
         </div>
-        <div class="case-studies__container"></div>
+        <div class="case-studies__container">
+          ${CaseStudyListRender}
+        </div>
       </section>
     `;
   }

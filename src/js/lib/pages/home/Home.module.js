@@ -342,7 +342,7 @@ export default class HomePage {
       model: this.apiData,
     });
     // Add component to child components array
-    this.addComponent = CaseStudiesSection__Component;
+    // this.addComponent = CaseStudiesSection__Component;
 
     return `
       <!-- About Us Section -->
