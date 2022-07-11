@@ -1,3 +1,4 @@
+import AboutUsSection from "./components/AboutUsSection.component";
 import ButtonComponent from "./components/Button.component";
 import CardComponent from "./components/Card.component";
 import ImageListComponent from "./components/ImageList.component";
@@ -118,6 +119,11 @@ import ImageSliderComponent from "./components/ImageSlider.component";
  * @property {OurServicesSection} ourServicesSection
  */
 
+/**
+ * @typedef {Object} Config
+ * @property {string} appendTo
+ */
+
 // ---------------------------------------------------------------------
 // HOMEPAGE CLASS DEFINITION
 // ---------------------------------------------------------------------
@@ -135,7 +141,11 @@ export default class HomePage {
    */
   components = [];
 
-  constructor() {
+  /**
+   *
+   * @param {Config} config
+   */
+  constructor(config) {
     this.init();
   }
 
@@ -143,6 +153,8 @@ export default class HomePage {
     await this.initComponents();
 
     // Render Template
+    const root = document.querySelector('[data-component="HomePageComponent"]');
+    root.innerHTML = this.template;
 
     // Initiate Component events
     await this.initEvents();
@@ -281,6 +293,16 @@ export default class HomePage {
 
   set addComponent(component) {
     this.components.push(component);
+    console.log("this.components: ", this.components);
+  }
+
+  /**
+   *
+   * @param {string} component  the variable name used to name the
+   *                            component when it was initialized
+   */
+  _getComponent(component) {
+    // this.components.find;
   }
 
   async initEvents() {
@@ -297,25 +319,21 @@ export default class HomePage {
     return data;
   }
 
-  _generateTemplate() {
+  get template() {
+    return this.renderTemplate();
+  }
+
+  /**
+   * @returns {string} a HTML string of the component
+   * @method
+   * @protected
+   */
+  renderTemplate() {
+    const AboutUsSection__Component = new AboutUsSection({
+      model: this.apiData,
+    });
     return `
-      <section class="about-us">
-        <div
-          class="about-us__statement"
-          data-content-id="aboutUsSection.statement"
-        >
-          <!-- Dev: Card template -->
-          <div class="content-card about-us__statement-card">
-            <!-- Card Header -->
-            <div class="content-card__header"></div>
-            <!-- Card Body -->
-            <div class="content-card__body"></div>
-            <!-- Card Footer -->
-            <div class="content-card__footer"></div>
-          </div>
-        </div>
-        <div class="about-us__founders-msg"></div>
-      </section>
+      ${AboutUsSection__Component.template}
 
       <!-- Case Studies Section -->
       <section class="case-studies">

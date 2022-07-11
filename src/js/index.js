@@ -106,4 +106,8 @@ import HomePage from "./lib/pages/home/Home.module";
 
 //   });
 
-new HomePage();
+const HomePage__Component = new HomePage();
+
+// const root = document.querySelector('[data-component="HomePageComponent"]');
+// // Render HomePage component in the root element
+// if (HomePage__Component.apiData) root.innerHTML = HomePage__Component.template;

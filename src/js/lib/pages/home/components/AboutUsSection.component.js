@@ -1,4 +1,6 @@
 import BaseSection from "../../../base/BaseSection.component";
+import ButtonComponent from "./Button.component";
+import CardComponent from "./Card.component";
 
 // ----------------------------------------------------------------------
 // TYPES DEFINITION
@@ -39,12 +41,13 @@ export default class AboutUsSection extends BaseSection {
    * @protected
    */
   renderTemplate() {
+    console.log("this.model aboutussection: ", this.model);
     const StatementCard__Cta_Btn__Component = new ButtonComponent({
       appendTo: "",
       model: {
         id: "statement-card-cta",
-        ...this.apiData.aboutUsSection.statement.footer[
-          this.apiData.aboutUsSection.statement.footer.__type
+        ...this.model.aboutUsSection.statement.footer[
+          this.model.aboutUsSection.statement.footer.__type
         ],
         attributes: [{ name: "class", value: "" }],
       },
@@ -56,25 +59,27 @@ export default class AboutUsSection extends BaseSection {
     const StatementCard__Component = new CardComponent({
       header: {
         content: {
-          string:
-            this.apiData.aboutUsSection.statement.header[
-              this.apiData.aboutUsSection.statement.header.__type
+          string: [
+            this.model.aboutUsSection.statement.header[
+              this.model.aboutUsSection.statement.header.__type
             ],
+          ],
           attributes: [{ name: "class", value: "hero__content__title" }],
         },
       },
       body: {
         content: {
-          string:
-            this.apiData.aboutUsSection.statement.body[
-              this.apiData.aboutUsSection.statement.body.__type
+          string: [
+            this.model.aboutUsSection.statement.body[
+              this.model.aboutUsSection.statement.body.__type
             ],
+          ],
           attributes: [{ name: "class", value: "hero__content__description" }],
         },
       },
       footer: {
         content: {
-          string: StatementCard__Cta_Btn__Component.template,
+          string: [StatementCard__Cta_Btn__Component.template],
           attributes: [{ name: "class", value: "hero__content__cta" }],
         },
       },

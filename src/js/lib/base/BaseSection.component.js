@@ -129,7 +129,7 @@ export default class BaseSection {
   async initEvents() {}
 
   get template() {
-    return renderTemplate();
+    return this.renderTemplate();
   }
 
   set addComponent(component) {
