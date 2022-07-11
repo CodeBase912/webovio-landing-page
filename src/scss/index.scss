@@ -4,6 +4,14 @@
 $mobileLandscape: 580px;
 $tablet: 973px;
 $laptop: 1000px;
+$maxContentWidth: 1108px;
+$boxShadow: 0 100px 100px rgba(0, 0, 0, 0.15);
+$imgBoxShadow: 10px 15px 43px rgba(0, 0, 0, 0.18);
+$text_primary: #4d533c;
+$text_secondary: #152934;
+$text_tertiary: #21384299;
+$btnColor: #edb91b;
+// $btnColor: #edb91b;
 
 .container {
   overflow-x: hidden;
@@ -53,7 +61,7 @@ $laptop: 1000px;
   @media screen and (min-width: $laptop) {
     & {
       padding: 0 60px;
-      max-width: 1108px;
+      max-width: $maxContentWidth;
       margin: auto;
       justify-content: flex-start;
     }
@@ -138,7 +146,7 @@ $laptop: 1000px;
   @media screen and (min-width: $laptop) {
     & {
       padding-left: 60px;
-      max-width: 1108px;
+      max-width: $maxContentWidth;
       left: 50%;
       transform: translateX(-50%);
       margin: auto;
@@ -152,5 +160,107 @@ $laptop: 1000px;
 }
 
 .about-us {
-  margin-top: 250px;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0 20px 100px 20px;
+
+  .about-us__founders-msg {
+    display: flex;
+    justify-content: end;
+
+    .content-card {
+      box-shadow: $boxShadow;
+      padding: 200px 40px 40px 40px;
+      width: 80%;
+      align-content: flex-start;
+      height: max-content;
+
+      .hero__content__description {
+        color: $text_primary;
+        font-size: 150%; // Default: 24px
+        width: 100%;
+      }
+
+      .content-card__footer > div {
+        display: flex;
+
+        .content-card__footer__user-img-container {
+          margin-right: 30px;
+
+          img {
+            border-radius: 50%;
+            box-shadow: $imgBoxShadow;
+          }
+        }
+
+        .content-card__footer__user-details {
+          .content-card__footer__user-details__user-name {
+            color: $text_primary;
+            font-size: 137.5%; // Default: 22px
+          }
+
+          .content-card__footer__user-details__user-info {
+            color: $text_secondary;
+            font-size: 100%;
+          }
+        }
+      }
+
+      @media screen and (min-width: $tablet) {
+        padding: 250px 40px 40px 40px;
+      }
+    }
+  }
+
+  .about-us__statement {
+    display: flex;
+    justify-content: flex-start;
+    .content-card {
+      padding: 150px 0 40px 0;
+
+      .hero__content__title {
+        color: $text_primary;
+        font-size: 225%;
+      }
+
+      .hero__content__description {
+        color: $text_tertiary;
+        font-size: 100%;
+      }
+
+      .content-card__footer {
+        button {
+          background: none;
+          border: none;
+          color: $btnColor;
+          font-weight: bolder;
+          cursor: pointer;
+        }
+
+        button:hover,
+        button:focus {
+          text-decoration: underline;
+        }
+      }
+
+      @media screen and (min-width: $tablet) {
+        padding: 250px 0 40px 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    & {
+      flex-direction: row;
+      max-width: $maxContentWidth;
+      margin: auto;
+    }
+  }
+
+  @media screen and (min-width: $laptop) {
+    & {
+      padding-left: 60px;
+      padding-right: 60px;
+    }
+  }
 }
