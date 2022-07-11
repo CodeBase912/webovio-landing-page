@@ -41,7 +41,6 @@ export default class AboutUsSection extends BaseSection {
    * @protected
    */
   renderTemplate() {
-    console.log("this.model aboutussection: ", this.model);
     const StatementCard__Cta_Btn__Component = new ButtonComponent({
       appendTo: "",
       model: {
@@ -87,6 +86,36 @@ export default class AboutUsSection extends BaseSection {
 
     // Add component to child components array
     this.addComponent = StatementCard__Component;
+    console.log(
+      "msgFromCeo Footer: ",
+      this.model.aboutUsSection.msgFromCEO.footer[
+        this.model.aboutUsSection.msgFromCEO.footer.__type
+      ]
+    );
+    const MsgFromCeoCard__Component = new CardComponent({
+      body: {
+        content: {
+          string: [
+            this.model.aboutUsSection.msgFromCEO.body[
+              this.model.aboutUsSection.msgFromCEO.body.__type
+            ],
+          ],
+          attributes: [{ name: "class", value: "hero__content__description" }],
+        },
+      },
+      footer: {
+        content: {
+          userCard:
+            this.model.aboutUsSection.msgFromCEO.footer[
+              this.model.aboutUsSection.msgFromCEO.footer.__type
+            ],
+          attributes: [{ name: "class", value: "hero__content__cta" }],
+        },
+      },
+    });
+
+    // Add component to child components array
+    this.addComponent = MsgFromCeoCard__Component;
 
     return `
       <section class="about-us">
@@ -96,7 +125,9 @@ export default class AboutUsSection extends BaseSection {
         >
           ${StatementCard__Component.template}
         </div>
-        <div class="about-us__founders-msg"></div>
+        <div class="about-us__founders-msg">
+          ${MsgFromCeoCard__Component.template}
+        </div>
       </section>
     `;
   }

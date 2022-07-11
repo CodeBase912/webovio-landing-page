@@ -1,5 +1,7 @@
 //@ts-check
 
+import { assetsHost } from "../../../../config.js";
+
 // ---------------------------------------------------------------------
 // TYPE DEFINITIONS
 // ---------------------------------------------------------------------
@@ -196,13 +198,18 @@ export default class CardComponent {
       contentUserCardElement = `
           <div>
             <div class="content-card__${section}__user-img-container">
-              <img src="${sectionConfig.content.userCard.userImg.src}" alt="${
-        sectionConfig.content.userCard.userImg.altText
-      }" ${
-        sectionConfig.content.userCard.userImg?.dimensions
-          ? `width="${sectionConfig.content.userCard.userImg.dimensions.width}" height="${sectionConfig.content.userCard.userImg.dimensions.height}"`
-          : ""
-      } />
+              <img 
+                src="${assetsHost}${
+        sectionConfig.content.userCard.userImg.src
+      }" 
+                alt="${sectionConfig.content.userCard.userImg.altText}" 
+                ${
+                  sectionConfig.content.userCard.userImg?.dimensions
+                    ? `width="${sectionConfig.content.userCard.userImg.dimensions.width}" 
+                    height="${sectionConfig.content.userCard.userImg.dimensions.height}"`
+                    : ""
+                } 
+              />
             </div>
             <div class="content-card__${section}__user-details">
             <p class="content-card__${section}__user-details__user-name">${
