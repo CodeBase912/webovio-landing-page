@@ -360,153 +360,157 @@ $screenSpan: min($maxPageWidth - $maxContentWidth, 100vw - $maxContentWidth);
   }
 
   .case-studies__container {
-    li {
-      list-style: none;
+    ul {
+      padding-left: 0;
 
-      &:nth-child(odd) {
-        .case-studies__study {
-          .case-studies__study__details-card {
-            display: flex;
-            align-self: flex-end;
-          }
+      li {
+        list-style: none;
 
-          .case-studies__study__img {
-            display: flex;
-            align-self: flex-start;
+        &:nth-child(odd) {
+          .case-studies__study {
+            .case-studies__study__details-card {
+              display: flex;
+              align-self: flex-end;
+            }
 
-            .case-studies__study__msgFromClient-card {
-              position: absolute;
-              right: 30px;
-              bottom: -30px;
-              margin-left: 10px;
+            .case-studies__study__img {
+              display: flex;
+              align-self: flex-start;
+
+              .case-studies__study__msgFromClient-card {
+                position: absolute;
+                right: 30px;
+                bottom: -30px;
+                margin-left: 10px;
+              }
             }
           }
         }
-      }
 
-      &:nth-child(even) {
-        .case-studies__study {
-          .case-studies__study__details-card {
-            display: flex;
-            align-self: flex-start;
-          }
+        &:nth-child(even) {
+          .case-studies__study {
+            .case-studies__study__details-card {
+              display: flex;
+              align-self: flex-start;
+            }
 
-          .case-studies__study__img {
-            display: flex;
-            align-self: flex-end;
+            .case-studies__study__img {
+              display: flex;
+              align-self: flex-end;
 
-            .case-studies__study__msgFromClient-card {
-              position: absolute;
-              left: 30px;
-              bottom: -30px;
-              margin-right: 10px;
+              .case-studies__study__msgFromClient-card {
+                position: absolute;
+                left: 30px;
+                bottom: -30px;
+                margin-right: 10px;
+              }
             }
           }
         }
-      }
 
-      .case-studies__study {
-        margin-bottom: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .case-studies__study__details-card {
-          padding-left: 20px;
-          padding-right: 20px;
-          margin-bottom: 20px;
+        .case-studies__study {
+          margin-bottom: 200px;
           display: flex;
-          align-items: center;
+          flex-direction: column;
+          justify-content: space-between;
 
-          .content-card {
-            max-width: 550px;
-
-            .content-card__header {
-              h2 {
-                color: $text_primary;
-                font-size: 225%;
-                margin-bottom: 24px;
-              }
-            }
-
-            .content-card__body {
-              p {
-                color: $text_tertiary;
-                font-size: 100%;
-              }
-            }
-
-            .content-card__footer {
-              button {
-                background: none;
-                border: none;
-                color: $btnColor;
-                font-weight: bolder;
-                margin-top: 40px;
-                font-size: 130%;
-                cursor: pointer;
-              }
-
-              button:hover,
-              button:focus {
-                text-decoration: underline;
-              }
-            }
-          }
-        }
-
-        .case-studies__study__img {
-          position: relative;
-          width: min-content;
-
-          & > img {
-            width: 100vw;
-            object-fit: cover;
-          }
-
-          .case-studies__study__msgFromClient-card {
-            max-width: 453px;
+          .case-studies__study__details-card {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
 
             .content-card {
-              box-shadow: $boxShadow;
-              padding: 30px;
-              align-content: flex-start;
-              height: max-content;
-              border-radius: 8px;
-              background-color: #fff;
+              max-width: 550px;
 
-              .hero__content__description {
-                color: $text_primary;
-                font-size: 100%;
-                width: 100%;
+              .content-card__header {
+                h2 {
+                  color: $text_primary;
+                  font-size: 225%;
+                  margin-bottom: 24px;
+                }
               }
 
-              .content-card__footer > div {
-                display: flex;
-                margin-top: 30px;
+              .content-card__body {
+                p {
+                  color: $text_tertiary;
+                  font-size: 100%;
+                }
+              }
 
-                .content-card__footer__user-img-container {
-                  margin-right: 30px;
-
-                  img {
-                    border-radius: 50%;
-                    box-shadow: $imgBoxShadow;
-                  }
+              .content-card__footer {
+                button {
+                  background: none;
+                  border: none;
+                  color: $btnColor;
+                  font-weight: bolder;
+                  margin-top: 40px;
+                  font-size: 130%;
+                  cursor: pointer;
                 }
 
-                .content-card__footer__user-details {
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
+                button:hover,
+                button:focus {
+                  text-decoration: underline;
+                }
+              }
+            }
+          }
 
-                  .content-card__footer__user-details__user-name {
-                    color: $text_primary;
-                    font-size: 100%;
+          .case-studies__study__img {
+            position: relative;
+            width: min-content;
+
+            & > img {
+              width: 100vw;
+              object-fit: cover;
+            }
+
+            .case-studies__study__msgFromClient-card {
+              max-width: 453px;
+
+              .content-card {
+                box-shadow: $boxShadow;
+                padding: 30px;
+                align-content: flex-start;
+                height: max-content;
+                border-radius: 8px;
+                background-color: #fff;
+
+                .hero__content__description {
+                  color: $text_primary;
+                  font-size: 100%;
+                  width: 100%;
+                }
+
+                .content-card__footer > div {
+                  display: flex;
+                  margin-top: 30px;
+
+                  .content-card__footer__user-img-container {
+                    margin-right: 30px;
+
+                    img {
+                      border-radius: 50%;
+                      box-shadow: $imgBoxShadow;
+                    }
                   }
 
-                  .content-card__footer__user-details__user-info {
-                    color: $text_secondary;
-                    font-size: 87.5%; // Default: 14px
+                  .content-card__footer__user-details {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .content-card__footer__user-details__user-name {
+                      color: $text_primary;
+                      font-size: 100%;
+                    }
+
+                    .content-card__footer__user-details__user-info {
+                      color: $text_secondary;
+                      font-size: 87.5%; // Default: 14px
+                    }
                   }
                 }
               }
@@ -541,6 +545,7 @@ $screenSpan: min($maxPageWidth - $maxContentWidth, 100vw - $maxContentWidth);
               .case-studies__study__msgFromClient-card {
                 right: -30px;
                 bottom: -30px;
+                margin-left: 0;
               }
             }
           }
@@ -562,6 +567,7 @@ $screenSpan: min($maxPageWidth - $maxContentWidth, 100vw - $maxContentWidth);
               .case-studies__study__msgFromClient-card {
                 left: -30px;
                 bottom: -30px;
+                margin-right: 0;
               }
             }
           }
