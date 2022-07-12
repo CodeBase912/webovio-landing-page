@@ -73,7 +73,9 @@ export default class CaseStudiesSection extends BaseSection {
           ${SectionHeader__Component.template}
         </div>
         <div class="case-studies__container">
-          ${CaseStudyListRender}
+          <ul>
+            ${CaseStudyListRender}
+          </ul>
         </div>
       </section>
     `;
