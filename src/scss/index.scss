@@ -173,7 +173,7 @@ $screenSpan: min($maxPageWidth - $maxContentWidth, 100vw - $maxContentWidth);
 
     .content-card {
       box-shadow: $boxShadow;
-      padding: 200px 40px 40px 40px;
+      padding: 300px 40px 40px 40px;
       width: 100%;
       align-content: flex-start;
       height: max-content;
@@ -242,12 +242,10 @@ $screenSpan: min($maxPageWidth - $maxContentWidth, 100vw - $maxContentWidth);
 
       @media screen and (min-width: $tablet) {
         & {
+          padding: 250px 40px 40px 40px;
           .about-us__founders-msg {
             display: flex;
             justify-content: flex-end;
-            .content-card {
-              padding: 250px 40px 40px 40px;
-            }
           }
         }
       }
@@ -562,7 +560,7 @@ $screenSpan: min($maxPageWidth - $maxContentWidth, 100vw - $maxContentWidth);
               margin-left: 60px;
 
               .case-studies__study__msgFromClient-card {
-                right: -30px;
+                left: -30px;
                 bottom: -30px;
               }
             }
