@@ -4,3 +4,4 @@ import "../scss/index.scss";
 import HomePage from "./lib/pages/home/Home.module";
 
 const HomePage__Component = new HomePage();
+HomePage__Component.init();

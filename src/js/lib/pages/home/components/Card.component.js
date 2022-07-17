@@ -200,24 +200,24 @@ export default class CardComponent {
             <div class="content-card__${section}__user-img-container">
               <img 
                 src="${assetsHost}${
-        sectionConfig.content.userCard.userImg.src
-      }" 
+  sectionConfig.content.userCard.userImg.src
+}" 
                 alt="${sectionConfig.content.userCard.userImg.altText}" 
                 ${
-                  sectionConfig.content.userCard.userImg?.dimensions
-                    ? `width="${sectionConfig.content.userCard.userImg.dimensions.width}" 
+  sectionConfig.content.userCard.userImg?.dimensions
+    ? `width="${sectionConfig.content.userCard.userImg.dimensions.width}" 
                     height="${sectionConfig.content.userCard.userImg.dimensions.height}"`
-                    : ""
-                } 
+    : ""
+} 
               />
             </div>
             <div class="content-card__${section}__user-details">
             <p class="content-card__${section}__user-details__user-name">${
-        sectionConfig.content.userCard.name
-      }</p>
+  sectionConfig.content.userCard.name
+}</p>
             <p class="content-card__${section}__user-details__user-info">${
-        sectionConfig.content.userCard.userInfo
-      }</p>
+  sectionConfig.content.userCard.userInfo
+}</p>
             </div>
           </div>
           `;
@@ -235,13 +235,13 @@ export default class CardComponent {
     return `
     <div ${elementId} class="content-card__${section.toLowerCase()} ${classes}">
     ${
-      // Render card section content
-      sectionConfig?.content?.string
-        ? // If content if a string
-          contentStringElement
-        : // if content is a user card
-          contentUserCardElement
-    }
+  // Render card section content
+  sectionConfig?.content?.string
+    ? // If content if a string
+    contentStringElement
+    : // if content is a user card
+    contentUserCardElement
+}
     </div>
     `;
   };

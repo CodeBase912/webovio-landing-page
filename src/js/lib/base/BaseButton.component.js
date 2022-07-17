@@ -91,7 +91,7 @@ export default class BaseButton {
       <button ${idAttr} ${classAttr} ${attributes}>
         ${text}
       </button>
-    ${hrefAttr && `</a>`}
+    ${hrefAttr && "</a>"}
     `;
   }
 }

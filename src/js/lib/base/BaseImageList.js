@@ -68,20 +68,20 @@ export default class BaseImageList {
       let imgAttributes = "";
       img?.attributes
         ? img.attributes.map((attribute) => {
-            imgAttributes += `${attribute.name}=${attribute.value} `;
-          })
+          imgAttributes += `${attribute.name}=${attribute.value} `;
+        })
         : "";
 
       // Define li element attributes
       let liAttributes = "";
       img?.liElementAttr
         ? img.liElementAttr.map((attribute) => {
-            if (attribute.name === "class") {
-              liAttributes += `${attribute.name}="skeleton-img ${attribute.value}" `;
-            } else {
-              liAttributes += `${attribute.name}=${attribute.value} `;
-            }
-          })
+          if (attribute.name === "class") {
+            liAttributes += `${attribute.name}="skeleton-img ${attribute.value}" `;
+          } else {
+            liAttributes += `${attribute.name}=${attribute.value} `;
+          }
+        })
         : "";
       console.log("img: ", img);
 
@@ -96,8 +96,8 @@ export default class BaseImageList {
     let ulAttributes = "";
     this.model.ulElementAttr
       ? this.model.ulElementAttr.map((attribute) => {
-          ulAttributes += `${attribute.name}=${attribute.value} `;
-        })
+        ulAttributes += `${attribute.name}=${attribute.value} `;
+      })
       : "";
 
     return `

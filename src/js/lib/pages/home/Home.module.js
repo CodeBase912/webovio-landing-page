@@ -142,19 +142,13 @@ export default class HomePage {
    */
   components = [];
 
-  /**
-   *
-   * @param {Config} config
-   */
-  constructor(config) {
-    this.init();
-  }
+  constructor() {}
 
   async init() {
     await this.initComponents();
 
     // Render Template
-    const root = document.querySelector('[data-component="HomePageComponent"]');
+    const root = document.querySelector("[data-component=\"HomePageComponent\"]");
     root.innerHTML = this.template;
 
     // Initiate Component events
@@ -203,6 +197,7 @@ export default class HomePage {
         images: clientLogos,
       },
     });
+    this.addComponent = ClientLogos__Component;
 
     // ---------------------------------------------------------------------
     // Init HeroContent Component
@@ -246,6 +241,7 @@ export default class HomePage {
         },
       },
     });
+    this.addComponent = HeroContent__Component;
 
     // ---------------------------------------------------------------------
     // Init HeroContent Component
@@ -288,22 +284,12 @@ export default class HomePage {
         },
       },
     });
-
-    console.log(`\n\nSlider:>>>> `, Slider__Component);
+    this.addComponent = StatementCard__Component;
   }
 
   set addComponent(component) {
     this.components.push(component);
     console.log("this.components: ", this.components);
-  }
-
-  /**
-   *
-   * @param {string} component  the variable name used to name the
-   *                            component when it was initialized
-   */
-  _getComponent(component) {
-    // this.components.find;
   }
 
   async initEvents() {
