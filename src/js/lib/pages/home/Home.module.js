@@ -148,7 +148,7 @@ export default class HomePage {
     await this.initComponents();
 
     // Render Template
-    const root = document.querySelector("[data-component=\"HomePageComponent\"]");
+    const root = document.querySelector('[data-component="HomePageComponent"]');
     root.innerHTML = this.template;
 
     // Initiate Component events
@@ -300,7 +300,7 @@ export default class HomePage {
   }
 
   async _fetchData() {
-    const response = await fetch("http://127.0.0.1:5501/src/js/data2.json");
+    const response = await fetch("./content/index.json");
     const data = await response.json();
     delete data.__type;
     return data;

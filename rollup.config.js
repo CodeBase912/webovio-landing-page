@@ -6,6 +6,7 @@ import html from "@web/rollup-plugin-html";
 import iife from "rollup-plugin-iife";
 import serve from "rollup-plugin-serve";
 import postcss from "rollup-plugin-postcss";
+import copy from "rollup-plugin-copy";
 
 export default {
   input: "src/js",
@@ -56,6 +57,9 @@ export default {
           return newHtml;
         },
       ],
+    }),
+    copy({
+      targets: [{ src: "src/content/index.json", dest: "build/content" }],
     }),
     babel({ babelHelpers: "bundled" }),
     iife(), // Convert bundled esm into iife, done to support code splitting using iife

@@ -40,6 +40,7 @@
     "postcss": "^8.4.14",
     "rimraf": "^3.0.2",
     "rollup": "^2.75.5",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-iife": "^0.6.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-scss": "^3.0.0",
